@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://sodohotel.com/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <image:image><image:loc>https://sodohotel.com/img/hero-main.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sodohotel.com/img/ext-day.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sodohotel.com/img/ext-front.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sodohotel.com/img/lobby.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sodohotel.com/img/de-1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sodohotel.com/img/sa-1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sodohotel.com/img/sa-2.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sodohotel.com/img/tw-1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sodohotel.com/img/wb-1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sodohotel.com/img/fa-lounge.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sodohotel.com/img/co-cafe.jpg</image:loc></image:image>
+    <image:image><image:loc>https://sodohotel.com/img/co-dining.jpg</image:loc></image:image>
+  </url>
+</urlset>
