@@ -3,15 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>소도호텔 앤 커먼즈 | 경기도 파주 호텔 공식 홈페이지</title>
-<meta name="description" content="경기도 파주 소도호텔 앤 커먼즈 공식 홈페이지. 객실 내 편백 사우나, 킹사이즈 시몬스 침대, 무료 주차·Wi-Fi, 조식과 카페·레스토랑·루프탑이 있는 별관 소도 커먼즈를 만나보세요.">
+<title>소도호텔 앤 커먼즈 | 파주 금촌역 호텔 공식 홈페이지</title>
+<meta name="description" content="파주 금촌역 도보 4분, 소도호텔 앤 커먼즈 공식 홈페이지. 객실 내 편백 사우나, 킹사이즈 시몬스 침대, 무료 주차·Wi-Fi, 조식과 카페·레스토랑·루프탑까지. 출장·여행·데이트 숙소로 편안하게.">
+<meta name="keywords" content="금촌역 호텔, 금촌 호텔, 금촌 숙소, 금촌 모텔, 파주 금촌 호텔, 금촌동 호텔, 금촌역 숙소, 금촌역 모텔, 금촌역 인근 숙소, 금촌 출장 숙소, 파주 출장 호텔, 금촌 비즈니스 호텔, 파주 비즈니스 호텔, 파주 디스플레이단지 숙소, 파주 산업단지 숙소, 금촌 감성 숙소, 금촌 프라이빗 숙소, 금촌 사우나 호텔, 파주 사우나 숙소, 금촌 무한대실, 파주 데이트 숙소, 파주 여행 숙소, 파주 호텔 추천, 금촌 호텔 추천, 파주 호캉스, 파주 가족여행, 파주 커플 숙소, 모텔 추천, 숙소 추천, 1박 추천">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://sodohotel.com/">
 <meta name="theme-color" content="#5c6e5c">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="소도호텔 앤 커먼즈">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="소도호텔 앤 커먼즈 | 경기도 파주 호텔">
+<meta property="og:title" content="소도호텔 앤 커먼즈 | 파주 금촌역 호텔">
 <meta property="og:description" content="도심 속 작은 섬, 소도(小島). 객실 내 편백 사우나와 카페·레스토랑·루프탑이 있는 파주 소도호텔 앤 커먼즈.">
 <meta property="og:url" content="https://sodohotel.com/">
 <meta property="og:image" content="https://sodohotel.com/img/og-image.jpg">
@@ -32,7 +33,7 @@
   "소도호텔"
  ],
  "url": "https://sodohotel.com/",
- "description": "경기도 파주 소도호텔 앤 커먼즈 공식 홈페이지. 객실 내 편백 사우나, 킹사이즈 시몬스 침대, 무료 주차·Wi-Fi, 조식과 카페·레스토랑·루프탑이 있는 별관 소도 커먼즈를 만나보세요.",
+ "description": "파주 금촌역 도보 4분, 소도호텔 앤 커먼즈 공식 홈페이지. 객실 내 편백 사우나, 킹사이즈 시몬스 침대, 무료 주차·Wi-Fi, 조식과 카페·레스토랑·루프탑까지. 출장·여행·데이트 숙소로 편안하게.",
  "image": [
   "https://sodohotel.com/img/og-image.jpg",
   "https://sodohotel.com/img/ext-day.jpg",
@@ -43,7 +44,7 @@
  "address": {
   "@type": "PostalAddress",
   "streetAddress": "원앙길 8-8",
-  "addressLocality": "파주시",
+  "addressLocality": "파주시 금촌동",
   "addressRegion": "경기도",
   "addressCountry": "KR"
  },
@@ -393,8 +394,70 @@ section { padding-block: clamp(80px, 11vw, 150px); }
 
 .toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px); padding: 10px 16px; background: var(--ink); color: var(--paper); font-size: 13.5px; border-radius: 2px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 80; }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* nearby + faq */
+.near { margin: 28px 0 0; display: grid; border-top: 1px solid var(--rule); }
+.near div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--rule); font-size: 14.5px; }
+.near dt { color: var(--muted); }
+.near dd { margin: 0; font-weight: 500; }
+.faq { background: var(--paper-2); }
+.faq-list { margin-top: clamp(32px, 5vw, 56px); border-top: 1px solid var(--rule); max-width: 880px; }
+.faq-item { border-bottom: 1px solid var(--rule); }
+.faq-item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; font-family: var(--display); font-size: clamp(17px, 1.8vw, 20px); }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; flex: none; font-family: var(--body); font-size: 22px; color: var(--sage); transition: transform .2s; }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { margin: 0; padding: 0 0 24px; color: var(--muted); max-width: 46em; }
 </style>
 
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "금촌역에서 가까운가요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "경의중앙선 금촌역에서 걸어서 약 4분 거리입니다. 금촌 시내 중심에 있어 식당과 편의시설을 이용하기 편하고, 차량으로 오시는 분은 투숙 기간 동안 무료로 주차할 수 있습니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "파주 출장 숙소로 이용하기 좋은가요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "LG디스플레이 파주 단지까지 차량으로 약 10분입니다. 별관 소도 커먼즈의 회의실과 본관의 공용 PC·세탁실·스팀다리미를 이용할 수 있고, 07:00부터 조식(일요일 휴무)을 제공해 금촌 출장·비즈니스 숙박에 알맞습니다."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "사우나가 있는 객실이 있나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "시그니처 딥 사우나 객실에는 객실 안에 편백나무 건식 사우나가 있습니다. 금촌에서 사우나 객실을 찾으신다면 이 객실을 선택해 주세요."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "대실도 가능한가요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "객실 타입과 날짜에 따라 대실·무한대실 상품을 운영합니다. 이용 시간과 요금은 여기어때·야놀자 등 예약 채널에서 확인하시거나 프론트(031-949-1583)로 문의해 주세요."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "커플이나 가족 여행 숙소로도 괜찮나요?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "모든 객실에 킹사이즈 시몬스 침대와 통합 OTT를 갖췄고, 시그니처 트윈은 최대 3명까지 머물 수 있습니다. 카페·레스토랑·루프탑이 있는 소도 커먼즈에서 파주 데이트나 가족여행의 하루를 편하게 마무리하세요."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">본문으로 건너뛰기</a>
@@ -435,7 +498,7 @@ section { padding-block: clamp(80px, 11vw, 150px); }
           <p class="label">About</p>
           <h2 id="about-title">작은 섬에서의 하루,<br>그곳이 소도입니다.</h2>
           <p class="poem">소도(小島)는 작은 섬을 뜻합니다.<br>도시의 소란에서 한 걸음 물러나<br>오롯이 나에게 머무는 시간.</p>
-          <p>소도호텔 앤 커먼즈는 객실이 있는 본관과 카페·레스토랑·루프탑이 있는 별관 소도 커먼즈로 이루어져 있습니다. 출장의 끝에도, 여행의 시작에도 단정하고 편안한 하루를 준비해 두었습니다.</p>
+          <p>소도호텔 앤 커먼즈는 객실이 있는 본관과 카페·레스토랑·루프탑이 있는 별관 소도 커먼즈로 이루어져 있습니다. 경의중앙선 금촌역에서 걸어서 4분, 출장의 끝에도 파주 여행의 시작에도 단정하고 편안한 하루를 준비해 두었습니다.</p>
         </div>
         <div class="about-photos">
           <figure class="a1"><img src="img/ext-day.jpg" alt="낮의 소도호텔 본관과 커먼즈 외관" width="1400" height="1050" loading="lazy" decoding="async"><figcaption>본관과 소도 커먼즈</figcaption></figure>
@@ -584,6 +647,11 @@ section { padding-block: clamp(80px, 11vw, 150px); }
             <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8C%8C%EC%A3%BC%EC%8B%9C%20%EC%9B%90%EC%95%99%EA%B8%B8%208-8" target="_blank" rel="noopener noreferrer">구글 지도 ↗</a>
             <button class="copy" type="button" data-copy="경기도 파주시 원앙길 8-8">주소 복사</button>
           </div>
+          <dl class="near" aria-label="주변 교통">
+            <div><dt>금촌역 (경의중앙선)</dt><dd>도보 약 4분</dd></div>
+            <div><dt>LG디스플레이 파주 단지</dt><dd>차량 약 10분</dd></div>
+            <div><dt>고양 킨텍스</dt><dd>차량 약 25분</dd></div>
+          </dl>
           <figure class="loc-photo" style="margin-inline:0"><img src="img/ext-front.jpg" alt="저녁의 소도 커먼즈 정면" width="1400" height="934" loading="lazy" decoding="async"><figcaption class="cap">원앙길에서 바라본 소도 커먼즈 정면</figcaption></figure>
         </div>
         <div style="min-width:0">
@@ -599,6 +667,22 @@ section { padding-block: clamp(80px, 11vw, 150px); }
             <li>건물 내부는 전면 금연이며, 흡연은 1층 야외 주차장의 흡연장소를 이용해 주세요.</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">FAQ</p>
+        <h2 id="faq-title">자주 묻는 질문</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item"><summary>금촌역에서 가까운가요?</summary><p>경의중앙선 금촌역에서 걸어서 약 4분 거리입니다. 금촌 시내 중심에 있어 식당과 편의시설을 이용하기 편하고, 차량으로 오시는 분은 투숙 기간 동안 무료로 주차할 수 있습니다.</p></details>
+        <details class="faq-item"><summary>파주 출장 숙소로 이용하기 좋은가요?</summary><p>LG디스플레이 파주 단지까지 차량으로 약 10분입니다. 별관 소도 커먼즈의 회의실과 본관의 공용 PC·세탁실·스팀다리미를 이용할 수 있고, 07:00부터 조식(일요일 휴무)을 제공해 금촌 출장·비즈니스 숙박에 알맞습니다.</p></details>
+        <details class="faq-item"><summary>사우나가 있는 객실이 있나요?</summary><p>시그니처 딥 사우나 객실에는 객실 안에 편백나무 건식 사우나가 있습니다. 금촌에서 사우나 객실을 찾으신다면 이 객실을 선택해 주세요.</p></details>
+        <details class="faq-item"><summary>대실도 가능한가요?</summary><p>객실 타입과 날짜에 따라 대실·무한대실 상품을 운영합니다. 이용 시간과 요금은 여기어때·야놀자 등 예약 채널에서 확인하시거나 프론트(031-949-1583)로 문의해 주세요.</p></details>
+        <details class="faq-item"><summary>커플이나 가족 여행 숙소로도 괜찮나요?</summary><p>모든 객실에 킹사이즈 시몬스 침대와 통합 OTT를 갖췄고, 시그니처 트윈은 최대 3명까지 머물 수 있습니다. 카페·레스토랑·루프탑이 있는 소도 커먼즈에서 파주 데이트나 가족여행의 하루를 편하게 마무리하세요.</p></details>
       </div>
     </div>
   </section>
