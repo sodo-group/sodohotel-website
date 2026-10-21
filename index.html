@@ -364,6 +364,8 @@ section { padding-block: clamp(80px, 11vw, 150px); }
 .contact dd a { text-decoration: none; }
 .copy { appearance: none; border: 1px solid var(--rule); background: none; color: var(--muted); font: 500 12px var(--body); padding: 6px 10px; border-radius: 2px; cursor: pointer; }
 .copy:hover { color: var(--ink); border-color: var(--ink); }
+a.call { display: inline-block; text-decoration: none; text-align: center; white-space: nowrap; color: var(--ink); border-color: var(--ink); }
+a.call:hover { background: var(--ink); color: var(--paper); }
 .notes { margin: 28px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 14px; color: var(--muted); }
 .notes li { padding-left: 16px; position: relative; }
 .notes li::before { content: ""; position: absolute; left: 0; top: .8em; width: 6px; height: 1px; background: currentColor; }
@@ -658,8 +660,8 @@ section { padding-block: clamp(80px, 11vw, 150px); }
         </div>
         <div style="min-width:0">
           <dl class="contact">
-            <div><dt>대표전화</dt><dd><a href="tel:031-949-1583">031-949-1583</a></dd><button class="copy" type="button" data-copy="031-949-1583">복사</button></div>
-            <div><dt>직통전화</dt><dd><a href="tel:010-8408-2036">010-8408-2036</a></dd><button class="copy" type="button" data-copy="010-8408-2036">복사</button></div>
+            <div><dt>대표전화</dt><dd><a href="tel:031-949-1583">031-949-1583</a></dd><a class="copy call" href="tel:0319491583" aria-label="대표전화 031-949-1583으로 전화걸기">전화걸기</a></div>
+            <div><dt>직통전화</dt><dd><a href="tel:010-8408-2036">010-8408-2036</a></dd><a class="copy call" href="tel:01084082036" aria-label="직통전화 010-8408-2036으로 전화걸기">전화걸기</a></div>
             <div><dt>카카오톡 ID</dt><dd>sodohotel</dd><button class="copy" type="button" data-copy="sodohotel">복사</button></div>
             <div><dt>체크인 · 아웃</dt><dd>16:00 · 12:00</dd><span></span></div>
           </dl>
