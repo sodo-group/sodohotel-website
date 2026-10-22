@@ -397,6 +397,7 @@ a.call:hover { background: var(--ink); color: var(--paper); }
 .biz div:has(.btns) { flex-wrap: wrap; align-items: center; row-gap: 6px; }
 .biz .copy { color: inherit; border-color: color-mix(in srgb, currentColor 35%, transparent); font-size: 11.5px; padding: 3px 8px; text-decoration: none; }
 .biz .copy:hover { color: inherit; border-color: currentColor; }
+@media (min-width: 601px) { .biz div:has(.btns) { display: grid; grid-template-columns: auto 1fr; column-gap: 12px; align-items: start; } .biz .btns { grid-column: 2; justify-content: flex-start; } }
 .copyright { grid-column: 1 / -1; margin: 24px 0 0; padding-top: 20px; border-top: 1px solid color-mix(in srgb, var(--paper) 18%, transparent); font-family: var(--latin); font-size: 9.5px; letter-spacing: .18em; opacity: .6; }
 @media (max-width: 600px) { .foot { grid-template-columns: 1fr; } }
 
