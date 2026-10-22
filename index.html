@@ -296,7 +296,7 @@ section { padding-block: clamp(80px, 11vw, 150px); }
 .room { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(28px, 4.5vw, 64px); align-items: start; }
 .gallery { display: grid; gap: 10px; min-width: 0; }
 .gallery .main { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: var(--paper); }
-.thumbs { display: grid; grid-template-columns: repeat(var(--n, 6), 1fr); gap: 8px; }
+.thumbs { display: grid; grid-template-columns: repeat(9, 1fr); gap: 8px; }
 .thumbs button { padding: 0; border: 0; background: none; cursor: pointer; opacity: .55; transition: opacity .2s; outline-offset: 2px; }
 .thumbs button[aria-current="true"], .thumbs button:hover { opacity: 1; }
 .thumbs img { width: 100%; aspect-ratio: 1; object-fit: cover; }
@@ -312,7 +312,7 @@ section { padding-block: clamp(80px, 11vw, 150px); }
 .amen li { padding: 6px 12px; background: var(--paper); font-size: 13.5px; border-radius: 2px; }
 .room-note { margin-top: 36px; font-size: 13px; color: var(--muted); }
 @media (max-width: 900px) { .room { grid-template-columns: 1fr; } }
-@media (max-width: 480px) { .thumbs { grid-template-columns: repeat(var(--m, 3), 1fr); } }
+@media (max-width: 480px) { .thumbs { grid-template-columns: repeat(5, 1fr); } }
 
 /* facilities */
 .fac-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px 14px; align-items: start; }
@@ -739,9 +739,6 @@ a.call:hover { background: var(--ink); color: var(--paper); }
   document.querySelectorAll('.room').forEach(room => {
     const p = room.dataset.prefix, main = room.querySelector('.main'), wrap = room.querySelector('.thumbs');
     const name = room.querySelector('h3').textContent;
-    const n = captions[p].length;
-    wrap.style.setProperty('--n', n > 9 ? Math.ceil(n / 2) : n);
-    wrap.style.setProperty('--m', n > 9 ? 5 : 3);
     captions[p].forEach((cap, i) => {
       const b = document.createElement('button');
       b.type = 'button'; b.setAttribute('aria-label', `${name} 사진 ${i + 1}: ${cap}`);
