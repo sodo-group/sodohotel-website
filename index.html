@@ -394,6 +394,9 @@ a.call:hover { background: var(--ink); color: var(--paper); }
 .biz div { display: flex; gap: 12px; }
 .biz dt { opacity: .6; flex: none; min-width: 6.5em; }
 .biz dd { margin: 0; font-variant-numeric: tabular-nums; }
+.biz div:has(.btns) { flex-wrap: wrap; align-items: center; row-gap: 6px; }
+.biz .copy { color: inherit; border-color: color-mix(in srgb, currentColor 35%, transparent); font-size: 11.5px; padding: 3px 8px; text-decoration: none; }
+.biz .copy:hover { color: inherit; border-color: currentColor; }
 .copyright { grid-column: 1 / -1; margin: 24px 0 0; padding-top: 20px; border-top: 1px solid color-mix(in srgb, var(--paper) 18%, transparent); font-family: var(--latin); font-size: 9.5px; letter-spacing: .18em; opacity: .6; }
 @media (max-width: 600px) { .foot { grid-template-columns: 1fr; } }
 
@@ -707,8 +710,8 @@ a.call:hover { background: var(--ink); color: var(--paper); }
       <div><dt>대표자</dt><dd>서제달</dd></div>
       <div><dt>사업자등록번호</dt><dd>680-79-00442</dd></div>
       <div><dt>주소</dt><dd>경기도 파주시 원앙길 8-8</dd></div>
-      <div><dt>대표전화</dt><dd>031-949-1583</dd></div>
-      <div><dt>직통전화</dt><dd>010-8408-2036</dd></div>
+      <div><dt>대표전화</dt><dd>031-949-1583</dd><span class="btns"><a class="copy call" href="tel:0319491583" aria-label="대표전화 031-949-1583으로 전화걸기">전화걸기</a></span></div>
+      <div><dt>직통전화</dt><dd>010-8408-2036</dd><span class="btns"><a class="copy call" href="tel:01084082036" aria-label="직통전화 010-8408-2036으로 전화걸기">전화걸기</a><a class="copy call" href="sms:01084082036" aria-label="직통전화 010-8408-2036으로 문자 보내기">문자발송</a></span></div>
       <div><dt>카카오톡</dt><dd>sodohotel</dd></div>
       <div><dt>체크인 · 아웃</dt><dd>16:00 · 12:00</dd></div>
     </dl>
