@@ -296,7 +296,7 @@ section { padding-block: clamp(80px, 11vw, 150px); }
 .room { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(28px, 4.5vw, 64px); align-items: start; }
 .gallery { display: grid; gap: 10px; min-width: 0; }
 .gallery .main { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: var(--paper); }
-.thumbs { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.thumbs { display: grid; grid-template-columns: repeat(var(--n, 6), 1fr); gap: 8px; }
 .thumbs button { padding: 0; border: 0; background: none; cursor: pointer; opacity: .55; transition: opacity .2s; outline-offset: 2px; }
 .thumbs button[aria-current="true"], .thumbs button:hover { opacity: 1; }
 .thumbs img { width: 100%; aspect-ratio: 1; object-fit: cover; }
@@ -531,7 +531,7 @@ a.call:hover { background: var(--ink); color: var(--paper); }
 
       <div class="room" role="tabpanel" id="p-de" aria-labelledby="t-de" data-prefix="de">
         <div class="gallery">
-          <img class="main" src="img/de-1.jpg" alt="소도 디럭스 에센셜 객실" width="1070" height="529" loading="lazy" decoding="async">
+          <img class="main" src="img/de-1.jpg" alt="소도 디럭스 에센셜 객실" width="1600" height="1066" loading="lazy" decoding="async">
           <div class="thumbs"></div>
         </div>
         <div class="room-info">
@@ -731,14 +731,15 @@ a.call:hover { background: var(--ink); color: var(--paper); }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 
   const captions = {
-    de: ['객실 전경', '침대와 라운지 체어', '라운지 체어', '전기포트와 데스크', '욕실', '어메니티'],
-    sa: ['객실 전경', '편백나무 건식 사우나', '침대와 라운지 체어', '세면대', '샤워 부스', '어메니티'],
+    de: ['객실 전경', '침대와 TV', 'TV와 데스크', '퀸 침대', '객실 전경', '스타일러', '테이블과 라운지 체어', '욕실'],
+    sa: ['객실 전경', '침대와 객실', '침대', '라운지 체어와 테이블', '스타일러', '세면대', '샤워 부스', '편백나무 건식 사우나', '사우나 이용 안내'],
     tw: ['객실 전경', '더블 + 슈퍼싱글 침대', '두 침대가 놓인 객실', '라운지 체어', '전기포트와 수납장', '세면대'],
     wb: ['객실 전경', '욕실', '욕실 상세', '침대와 객실', '세면대와 화장실', '전기포트와 전화기']
   };
   document.querySelectorAll('.room').forEach(room => {
     const p = room.dataset.prefix, main = room.querySelector('.main'), wrap = room.querySelector('.thumbs');
     const name = room.querySelector('h3').textContent;
+    wrap.style.setProperty('--n', captions[p].length);
     captions[p].forEach((cap, i) => {
       const b = document.createElement('button');
       b.type = 'button'; b.setAttribute('aria-label', `${name} 사진 ${i + 1}: ${cap}`);
