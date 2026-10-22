@@ -312,7 +312,7 @@ section { padding-block: clamp(80px, 11vw, 150px); }
 .amen li { padding: 6px 12px; background: var(--paper); font-size: 13.5px; border-radius: 2px; }
 .room-note { margin-top: 36px; font-size: 13px; color: var(--muted); }
 @media (max-width: 900px) { .room { grid-template-columns: 1fr; } }
-@media (max-width: 480px) { .thumbs { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 480px) { .thumbs { grid-template-columns: repeat(var(--m, 3), 1fr); } }
 
 /* facilities */
 .fac-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px 14px; align-items: start; }
@@ -575,7 +575,7 @@ a.call:hover { background: var(--ink); color: var(--paper); }
 
       <div class="room" role="tabpanel" id="p-wb" aria-labelledby="t-wb" data-prefix="wb" hidden>
         <div class="gallery">
-          <img class="main" src="img/wb-1.jpg" alt="소도 워크 앤 바스 객실" width="1600" height="1190" loading="lazy" decoding="async">
+          <img class="main" src="img/wb-1.jpg" alt="소도 워크 앤 바스 객실" width="1070" height="529" loading="lazy" decoding="async">
           <div class="thumbs"></div>
         </div>
         <div class="room-info">
@@ -734,12 +734,14 @@ a.call:hover { background: var(--ink); color: var(--paper); }
     de: ['객실 전경', '침대와 TV', 'TV와 데스크', '퀸 침대', '객실 전경', '스타일러', '테이블과 라운지 체어', '욕실'],
     sa: ['객실 전경', '침대와 객실', '침대', '라운지 체어와 테이블', '스타일러', '세면대', '샤워 부스', '편백나무 건식 사우나', '사우나 이용 안내'],
     tw: ['객실 전경', '더블 + 슈퍼싱글 침대', '두 침대가 놓인 객실', '라운지 체어', '전기포트와 수납장', '세면대'],
-    wb: ['객실 전경', '욕실', '욕실 상세', '침대와 객실', '세면대와 화장실', '전기포트와 전화기']
+    wb: ['객실 전경', '퀸 침대', '침대와 TV', '객실 전경', '침대', '무드등과 전화기', '시몬스 매트리스', '라운지 체어와 테이블', '데스크와 태블릿', '창가 데스크', '스타일러', '스타일러', '스타일러 옷걸이', '타월', '욕실', '샤워 공간', '어메니티']
   };
   document.querySelectorAll('.room').forEach(room => {
     const p = room.dataset.prefix, main = room.querySelector('.main'), wrap = room.querySelector('.thumbs');
     const name = room.querySelector('h3').textContent;
-    wrap.style.setProperty('--n', captions[p].length);
+    const n = captions[p].length;
+    wrap.style.setProperty('--n', n > 9 ? Math.ceil(n / 2) : n);
+    wrap.style.setProperty('--m', n > 9 ? 5 : 3);
     captions[p].forEach((cap, i) => {
       const b = document.createElement('button');
       b.type = 'button'; b.setAttribute('aria-label', `${name} 사진 ${i + 1}: ${cap}`);
