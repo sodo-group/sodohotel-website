@@ -351,51 +351,48 @@ section { padding-block: clamp(80px, 11vw, 150px); }
 
 /* travel */
 .travel { background: var(--paper-2); }
-.travel-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(32px, 5vw, 72px); align-items: start; }
-.tmap { margin: 0; position: sticky; top: 96px; min-width: 0; }
-.tmap svg { display: block; width: 100%; height: auto; }
+.travel-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(28px, 4.5vw, 64px); align-items: start; }
+.tmap { margin: 0; position: sticky; top: 92px; min-width: 0; }
+.tmap svg { display: block; width: 100%; height: auto; max-height: calc(100vh - 180px); background: var(--paper); border: 1px solid var(--rule); }
 .tmap .ring { fill: none; stroke: var(--rule); stroke-dasharray: 3 5; }
-.tmap .axis { stroke: var(--rule); }
-.tmap .ring-t { font: 9px var(--latin); letter-spacing: .14em; fill: var(--muted); }
-.tmap .line { stroke: var(--sage); stroke-opacity: .35; }
-.tmap .dot { fill: var(--paper); stroke: var(--sage); }
-.tmap .num { font: 600 11px var(--body); fill: var(--ink); text-anchor: middle; }
-.tmap .home { fill: var(--sage); }
-.tmap .home-t { font: 10px var(--latin); letter-spacing: .18em; fill: var(--sage); text-anchor: middle; }
-.spots { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); min-width: 0; }
-.spot { display: grid; grid-template-columns: 30px 1fr auto; gap: 8px 14px; padding: 24px 0; border-bottom: 1px solid var(--rule); }
-.spot .no { font-family: var(--latin); font-size: 11px; letter-spacing: .1em; color: var(--sage); padding-top: 9px; }
-.spot h3 { font-size: clamp(19px, 2vw, 23px); }
-.spot .dir { display: block; font-family: var(--body); font-size: 12.5px; letter-spacing: 0; color: var(--muted); margin-top: 4px; }
-.spot .dist { text-align: right; white-space: nowrap; font-family: var(--display); font-size: clamp(19px, 2vw, 23px); line-height: 1.35; font-variant-numeric: tabular-nums; }
-.spot .dist small { display: block; font-family: var(--body); font-size: 12.5px; color: var(--muted); margin-top: 4px; }
-.spot p { grid-column: 2 / -1; margin: 0; }
-.spot .desc { font-size: 14.5px; color: var(--muted); }
-.spot .why { padding-left: 14px; border-left: 2px solid var(--oak); font-size: 15px; font-weight: 500; }
-.spot .go { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); }
-.spot .go a:hover { color: var(--ink); }
+.tmap .axis { stroke: var(--rule); stroke-opacity: .5; }
+.tmap .rk { font: 9px var(--latin); letter-spacing: .1em; fill: var(--muted); }
+.tmap .nn { font: 10px var(--latin); fill: var(--muted); }
+.tmap .na { fill: none; stroke: var(--muted); }
+.tmap .rg { font: 600 11px var(--body); fill: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 3.5px; stroke-linejoin: round; pointer-events: none; }
+.tmap .pt { fill: var(--sage); stroke: var(--paper); stroke-width: 1.5; cursor: pointer; transition: opacity .2s; }
+.tmap .pt.top { fill: var(--oak); }
+.tmap .pt.off { opacity: .12; pointer-events: none; }
+.tmap .tip line { stroke: var(--ink); stroke-width: 1.2; }
+.tmap .tip circle { fill: none; stroke: var(--ink); stroke-width: 2; }
+.tmap .tip text { font: 600 12px var(--body); fill: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 4px; stroke-linejoin: round; }
+.tmap .home { fill: var(--ink); stroke: var(--paper); stroke-width: 2; }
+.tmap .home-t { font: 600 12px var(--body); fill: var(--ink); text-anchor: middle; paint-order: stroke; stroke: var(--paper); stroke-width: 4px; stroke-linejoin: round; }
+.tside { min-width: 0; }
+.tf { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 10px; }
+.tf-l { flex: none; width: 4.6em; font-size: 12.5px; color: var(--muted); }
+.tf button { appearance: none; border: 1px solid var(--rule); background: none; color: var(--ink); font: 500 13.5px var(--body); padding: 7px 12px; border-radius: 2px; cursor: pointer; }
+.tf button:hover { border-color: var(--sage); }
+.tf button[aria-pressed="true"] { background: var(--sage); border-color: var(--sage); color: var(--on-sage); }
+.t-count { margin: 22px 0 0; padding-bottom: 12px; font-size: 13px; color: var(--muted); border-bottom: 1px solid var(--rule); font-variant-numeric: tabular-nums; }
+.tlist { list-style: none; margin: 0; padding: 0; }
+.tp { display: grid; gap: 6px; padding: 20px 12px; margin-inline: -12px; border-bottom: 1px solid var(--rule); scroll-margin-top: 110px; transition: background .2s; }
+.tp.on { background: var(--paper); }
+.tp-h { display: flex; justify-content: space-between; align-items: baseline; gap: 6px 16px; flex-wrap: wrap; }
+.tp h3 { font-size: clamp(18px, 1.9vw, 21px); }
+.tp-t { font-size: 14px; font-weight: 600; color: var(--sage); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.tp p { margin: 0; }
+.tp-m { font-size: 12.5px; color: var(--muted); }
+.tp .pop { display: inline-block; margin-right: 8px; padding: 1px 7px; border: 1px solid var(--oak); color: var(--oak); font-weight: 600; font-size: 11.5px; border-radius: 2px; }
+.tp-d { font-size: 14.5px; color: var(--muted); }
+.tp-w { padding-left: 14px; border-left: 2px solid var(--oak); font-size: 15px; font-weight: 500; }
+.tp-l { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); }
+.tp-l a:hover { color: var(--ink); }
+.t-empty { margin: 28px 0 0; color: var(--muted); }
+.t-more { margin-top: 24px; cursor: pointer; background: none; font-family: var(--body); }
 .travel-note { margin: 28px 0 0; font-size: 13px; color: var(--muted); }
 .travel .facts { margin-top: clamp(40px, 6vw, 72px); }
-@media (max-width: 900px) { .travel-grid { grid-template-columns: 1fr; } .tmap { position: static; max-width: 460px; } }
-
-.more-travel { margin-top: clamp(48px, 7vw, 88px); display: grid; gap: 12px; }
-.more-travel h3 { margin-bottom: 12px; }
-.more-travel details { border: 1px solid var(--rule); background: var(--paper); }
-.more-travel summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 20px; cursor: pointer; list-style: none; font-family: var(--display); font-size: clamp(18px, 2vw, 22px); }
-.more-travel summary::-webkit-details-marker { display: none; }
-.more-travel summary small { display: block; font-family: var(--body); font-size: 13px; color: var(--muted); margin-top: 2px; }
-.more-travel summary::after { content: "+"; font-family: var(--body); font-size: 24px; line-height: 1; color: var(--sage); }
-.more-travel details[open] summary::after { content: "\2212"; }
-.mlist { list-style: none; margin: 0; padding: 0 20px 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
-.mlist li { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: baseline; padding: 16px 0; border-top: 1px solid var(--rule); min-width: 0; }
-.mlist b { font-weight: 600; font-size: 15.5px; }
-.mlist b small { font-weight: 400; font-size: 12px; color: var(--muted); margin-left: 8px; white-space: nowrap; }
-.mlist .mt { font-size: 13px; font-weight: 600; color: var(--sage); white-space: nowrap; font-variant-numeric: tabular-nums; }
-.mlist p { grid-column: 1 / -1; margin: 0; font-size: 14px; color: var(--muted); }
-.mlist .ml { grid-column: 1 / -1; display: flex; gap: 16px; font-size: 12.5px; color: var(--muted); }
-.mlist .ml a:hover { color: var(--ink); }
-@media (max-width: 900px) { .mlist { grid-template-columns: 1fr; } }
-@media (max-width: 480px) { .mlist li { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .travel-grid { grid-template-columns: 1fr; } .tmap { position: static; max-width: 440px; } .tmap svg { max-height: none; } .tf-l { width: 100%; } }
 
 /* location */
 .loc-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(32px, 6vw, 88px); align-items: start; }
@@ -766,212 +763,675 @@ a.call:hover { background: var(--ink); color: var(--paper); }
       <div class="sec-head">
         <p class="label">Around Sodo</p>
         <h2 id="travel-title">파주 여행의 한가운데,<br>소도에서 떠나세요</h2>
-        <p class="lede">소도호텔은 파주의 중심 금촌에 있습니다. 서쪽의 헤이리와 아울렛, 동쪽의 수목원과 호수, 북쪽의 임진각까지 파주 가볼 만한 곳 열 곳 가운데 아홉 곳, 고양까지 합친 107곳 가운데 100곳이 차로 30분 안쪽입니다. 짐은 소도에 두고 가볍게 다녀오세요.</p>
+        <p class="lede">소도호텔은 파주의 중심 금촌에 있습니다. 북쪽의 임진각, 서쪽의 헤이리와 아울렛, 동쪽의 수목원과 호수, 남쪽의 운정과 일산까지 파주·고양 가볼 만한 곳 107곳 가운데 100곳이 차로 30분 안쪽입니다. 짐은 소도에 두고 가볍게 다녀오세요.</p>
       </div>
       <div class="travel-grid">
         <figure class="tmap">
-          <svg viewBox="0 0 440 420" role="img" aria-label="소도호텔을 중심으로 본 파주 여행지 열 곳의 방향과 거리. 서쪽에 헤이리·아울렛·오두산, 동쪽에 벽초지수목원·마장호수·보광사, 북쪽에 임진각과 곤돌라, 남쪽에 운정호수공원, 북동쪽에 감악산이 있습니다.">
-            <line class="axis" x1="165" y1="8" x2="165" y2="412"/><line class="axis" x1="8" y1="300" x2="432" y2="300"/>
-            <circle class="ring" cx="165" cy="300" r="145"/><circle class="ring" cx="165" cy="300" r="290"/>
-            <text class="ring-t" x="171" y="150">10KM</text><text class="ring-t" x="171" y="24">20KM</text>
-            <line class="line" x1="165" y1="300" x2="132" y2="372"/><line class="line" x1="165" y1="300" x2="68" y2="262"/><line class="line" x1="165" y1="300" x2="64" y2="292"/><line class="line" x1="165" y1="300" x2="40" y2="286"/><line class="line" x1="165" y1="300" x2="291" y2="242"/><line class="line" x1="165" y1="300" x2="360" y2="282"/><line class="line" x1="165" y1="300" x2="350" y2="319"/><line class="line" x1="165" y1="300" x2="111" y2="96"/><line class="line" x1="165" y1="300" x2="138" y2="94"/><line class="line" x1="165" y1="300" x2="381" y2="23"/>
-            <circle class="dot" cx="132" cy="372" r="11"/><text class="num" x="132" y="376">1</text><circle class="dot" cx="68" cy="262" r="11"/><text class="num" x="68" y="266">2</text><circle class="dot" cx="64" cy="292" r="11"/><text class="num" x="64" y="296">3</text><circle class="dot" cx="40" cy="286" r="11"/><text class="num" x="40" y="290">4</text><circle class="dot" cx="291" cy="242" r="11"/><text class="num" x="291" y="246">5</text><circle class="dot" cx="360" cy="282" r="11"/><text class="num" x="360" y="286">6</text><circle class="dot" cx="350" cy="319" r="11"/><text class="num" x="350" y="323">7</text><circle class="dot" cx="111" cy="96" r="11"/><text class="num" x="111" y="100">8</text><circle class="dot" cx="138" cy="94" r="11"/><text class="num" x="138" y="98">9</text><circle class="dot" cx="381" cy="23" r="11"/><text class="num" x="381" y="27">10</text>
-            <circle class="home" cx="165" cy="300" r="7"/><text class="home-t" x="165" y="324">SODO</text>
-          </svg>
-          <figcaption class="cap">소도호텔 기준 방향과 직선거리. 번호는 오른쪽 목록과 같습니다.</figcaption>
+          <svg viewBox="0 0 420 560" role="img" aria-label="소도호텔을 중심에 둔 파주·고양 여행지 약도. 북쪽에 임진각과 DMZ, 서쪽에 헤이리와 통일동산, 동쪽에 광탄과 마장호수, 남쪽에 운정과 일산이 있습니다."><line class="axis" x1="164.6" y1="0" x2="164.6" y2="560"/><line class="axis" x1="0" y1="301.8" x2="420" y2="301.8"/><circle class="ring" cx="164.6" cy="301.8" r="122.1"/><circle class="ring" cx="164.6" cy="301.8" r="244.2"/><text class="rk" x="290.7" y="297.5">10km</text><text class="rk" x="404.8" y="297.5" text-anchor="end">20km</text><text class="nn" x="14" y="24">N</text><path class="na" d="M18 30v20M18 30l-4 6M18 30l4 6"/><g class="pts"></g><text class="rg" x="128.8" y="101.8" text-anchor="middle">임진각·DMZ</text><text class="rg" x="180.4" y="175" text-anchor="middle">문산</text><text class="rg" x="83.7" y="249.6" text-anchor="middle">헤이리·통일동산</text><text class="rg" x="72.9" y="386.4" text-anchor="middle">출판도시</text><text class="rg" x="139.5" y="378.3" text-anchor="middle">운정</text><text class="rg" x="164.3" y="450.1" text-anchor="middle">일산</text><text class="rg" x="314.7" y="257.7" text-anchor="middle">광탄·마장호수</text><text class="rg" x="330.8" y="30" text-anchor="middle">적성·감악산</text><text class="rg" x="244.8" y="481.3" text-anchor="middle">고양 덕양</text><g class="tip" hidden><line/><circle r="8"/><text></text></g><circle class="home" cx="164.6" cy="301.8" r="7"/><text class="home-t" x="164.6" y="322.8">소도호텔</text></svg>
+          <figcaption class="cap">가운데가 소도호텔, 위쪽이 북쪽입니다. 점선 원은 직선거리 10km·20km, 갈색 점은 인기 여행지입니다. 점을 누르면 해당 여행지로 이동합니다.</figcaption>
         </figure>
-        <ol class="spots">
-          <li class="spot">
-            <span class="no" aria-hidden="true">01</span>
-            <h3>운정호수공원<span class="dir">소도호텔에서 남쪽</span></h3>
-            <div class="dist">차로 약 14분<small>8.8km</small></div>
-            <p class="desc">운정신도시 한가운데 펼쳐진 호수공원으로, 물가를 따라 걷는 산책로와 저녁 풍경이 좋습니다.</p>
-            <p class="why">인기 여행지 열 곳 중 가장 가까워, 체크인 뒤 저녁 산책만 다녀와도 파주에서의 첫날이 채워집니다.</p>
-            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9A%B4%EC%A0%95%ED%98%B8%EC%88%98%EA%B3%B5%EC%9B%90,37.71987144,126.74948275" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=b9c20ef9-cb31-45ab-8bb6-5e047c788fa8" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+        <div class="tside">
+          <div class="tf" role="group" aria-label="지역"><span class="tf-l">지역</span><button type="button" data-f="city" data-v="" aria-pressed="true">전체</button><button type="button" data-f="city" data-v="파주" aria-pressed="false">파주</button><button type="button" data-f="city" data-v="고양" aria-pressed="false">고양</button></div>
+          <div class="tf" role="group" aria-label="이동시간"><span class="tf-l">이동시간</span><button type="button" data-f="min" data-v="" aria-pressed="true">전체</button><button type="button" data-f="min" data-v="15" aria-pressed="false">15분 이내</button><button type="button" data-f="min" data-v="20" aria-pressed="false">20분 이내</button><button type="button" data-f="min" data-v="30" aria-pressed="false">30분 이내</button></div>
+          <div class="tf" role="group" aria-label="테마"><span class="tf-l">테마</span><button type="button" data-f="theme" data-v="" aria-pressed="true">전체</button><button type="button" data-f="theme" data-v="top" aria-pressed="false">인기 10</button><button type="button" data-f="theme" data-v="nature" aria-pressed="false">자연·공원</button><button type="button" data-f="theme" data-v="history" aria-pressed="false">역사·사찰</button><button type="button" data-f="theme" data-v="peace" aria-pressed="false">평화·DMZ</button><button type="button" data-f="theme" data-v="culture" aria-pressed="false">전시·문화</button><button type="button" data-f="theme" data-v="family" aria-pressed="false">가족·체험</button><button type="button" data-f="theme" data-v="shop" aria-pressed="false">쇼핑·미식</button><button type="button" data-f="theme" data-v="spa" aria-pressed="false">스파·레저</button></div>
+          <p class="t-count" aria-live="polite">107곳 · 가까운 순</p>
+          <ol class="tlist">
+          <li class="tp" data-city="파주" data-min="9" data-theme="shop" data-top="0" data-x="192.6" data-y="281.4">
+            <div class="tp-h"><h3>조인폴리아</h3><span class="tp-t">차로 약 9분 · 3.4km</span></div>
+            <p class="tp-m">파주 · 전문상가</p>
+            <p class="tp-w">소도에서 가장 가까운 여행지로, 체크인 전이나 체크아웃 뒤 가볍게 들러 식물을 구경하기 좋습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%A1%B0%EC%9D%B8%ED%8F%B4%EB%A6%AC%EC%95%84,37.779534,126.801386" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=779268e9-d91d-43bb-b4fd-0869c850028e" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
           </li>
-          <li class="spot">
-            <span class="no" aria-hidden="true">02</span>
-            <h3>헤이리 예술마을<span class="dir">소도호텔에서 서쪽</span></h3>
-            <div class="dist">차로 약 18분<small>9.2km</small></div>
-            <p class="desc">갤러리와 박물관, 책방과 카페가 모여 있는 예술인 마을입니다.</p>
-            <p class="why">전시는 헤이리에서 보고 저녁의 한 잔은 소도 커먼즈 카페 &amp; 펍에서, 하루로는 아쉬운 마을을 이틀에 나눠 즐길 수 있습니다.</p>
-            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%97%A4%EC%9D%B4%EB%A6%AC%EC%98%88%EC%88%A0%EB%A7%88%EC%9D%84,37.78804091,126.6993044" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=82d9a397-b8c5-454e-bb71-dff610fb9bb9" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          <li class="tp" data-city="파주" data-min="10" data-theme="shop" data-top="0" data-x="199.7" data-y="330.2">
+            <div class="tp-h"><h3>봉일천종합시장</h3><span class="tp-t">차로 약 10분 · 4.1km</span></div>
+            <p class="tp-m">파주 · 상설시장</p>
+            <p class="tp-w">오래된 시장 구경으로 출출함을 달래고, 가까운 소도에서 느긋한 저녁을 보내세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%B4%89%EC%9D%BC%EC%B2%9C%EC%A2%85%ED%95%A9%EC%8B%9C%EC%9E%A5,37.743483,126.807975" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=d19b4009-0298-449b-ad4d-0f6c540468b8" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
           </li>
-          <li class="spot">
-            <span class="no" aria-hidden="true">03</span>
-            <h3>신세계사이먼 파주 프리미엄 아울렛<span class="dir">소도호텔에서 서쪽</span></h3>
-            <div class="dist">차로 약 18분<small>9.5km</small></div>
-            <p class="desc">헤이리와 이웃한 야외 거리형 프리미엄 아울렛입니다.</p>
-            <p class="why">쇼핑백은 객실에 내려두고 새 옷은 스타일러에 걸어둔 채, 체크아웃 12시까지 느긋하게 쉬어 가세요.</p>
-            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%EC%95%84%EC%9A%B8%EB%A0%9B,37.76947081,126.69633445" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=511013c1-1308-4cdc-88af-85a5e2bb5da8" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          <li class="tp" data-city="파주" data-min="12" data-theme="nature" data-top="0" data-x="158.5" data-y="257.2">
+            <div class="tp-h"><h3>월롱시민공원</h3><span class="tp-t">차로 약 12분 · 5.1km</span></div>
+            <p class="tp-m">파주 · 시민공원</p>
+            <p class="tp-w">소도에서 가까운 나들이 공원이라, 체크아웃 뒤 가볍게 들르기 좋습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9B%94%EB%A1%B1%EC%8B%9C%EB%AF%BC%EA%B3%B5%EC%9B%90,37.797394,126.769637" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=6a9f9450-2267-4e4f-8eda-ee1881e44675" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
           </li>
-          <li class="spot">
-            <span class="no" aria-hidden="true">04</span>
-            <h3>오두산 통일전망대<span class="dir">소도호텔에서 서쪽</span></h3>
-            <div class="dist">차로 약 20분<small>11.3km</small></div>
-            <p class="desc">한강과 임진강이 만나는 자리에서 강 건너 북녘을 바라보는 전망대입니다.</p>
-            <p class="why">전망대의 강바람을 맞고 내려와 20분이면, 따뜻한 객실과 킹사이즈 침대가 기다립니다.</p>
-            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%98%A4%EB%91%90%EC%82%B0%ED%86%B5%EC%9D%BC%EC%A0%84%EB%A7%9D%EB%8C%80,37.77327614,126.67722749" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=3e569bf5-729f-4e82-9191-5e016f346cb2" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          <li class="tp" data-city="파주" data-min="12" data-theme="family" data-top="0" data-x="147.2" data-y="358.2">
+            <div class="tp-h"><h3>파주놀이구름</h3><span class="tp-t">차로 약 12분 · 6.4km</span></div>
+            <p class="tp-m">파주 · 체험관광</p>
+            <p class="tp-w">아이와 종일 논 날은 침대가 둘인 시그니처 트윈에서 온 가족이 함께 쉬어 가기 좋습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%EB%86%80%EC%9D%B4%EA%B5%AC%EB%A6%84,37.722838,126.759128" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=82bcee35-001e-4cfc-99cf-21a244aed260" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
           </li>
-          <li class="spot">
-            <span class="no" aria-hidden="true">05</span>
-            <h3>벽초지수목원<span class="dir">소도호텔에서 동쪽</span></h3>
-            <div class="dist">차로 약 20분<small>14.3km</small></div>
-            <p class="desc">동양과 서양의 정원을 한곳에 가꾼 수목원으로, 계절마다 다른 풍경을 보여줍니다.</p>
-            <p class="why">소도에서 아침을 들고 20분이면 닿아, 사람이 몰리기 전 한적한 오전의 정원을 먼저 걸을 수 있습니다.</p>
-            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%B2%BD%EC%B4%88%EC%A7%80%EC%88%98%EB%AA%A9%EC%9B%90,37.80077004,126.87425849" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9ffcf9ff-1b25-4abd-8268-6f3a0dc4c296" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          <li class="tp" data-city="파주" data-min="13" data-theme="history" data-top="0" data-x="127.3" data-y="326.3">
+            <div class="tp-h"><h3>교하동 고인돌 산림욕장</h3><span class="tp-t">차로 약 13분 · 5.6km</span></div>
+            <p class="tp-m">파주 · 선사유적지</p>
+            <p class="tp-w">산림욕으로 맑아진 몸을, 편백 향이 도는 사우나 객실에서 한 번 더 쉬게 해 주세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B5%90%ED%95%98%EB%8F%99%20%EA%B3%A0%EC%9D%B8%EB%8F%8C%20%EC%82%B0%EB%A6%BC%EC%9A%95%EC%9E%A5,37.746362,126.740555" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=77394fee-895d-4d7c-b8bc-b07e42fcfe29" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
           </li>
-          <li class="spot">
-            <span class="no" aria-hidden="true">06</span>
-            <h3>마장호수 출렁다리<span class="dir">소도호텔에서 동쪽</span></h3>
-            <div class="dist">차로 약 27분<small>17.2km</small></div>
-            <p class="desc">호수 위를 가로지르는 출렁다리와 물가 둘레길을 함께 걷는 곳입니다.</p>
-            <p class="why">둘레길 한 바퀴로 묵직해진 다리는 소도의 편백나무 건식 사우나 객실에서 풀어보세요.</p>
-            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%A7%88%EC%9E%A5%ED%98%B8%EC%88%98%EC%B6%9C%EB%A0%81%EB%8B%A4%EB%A6%AC,37.77590357,126.92803556" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=63b86613-d1ba-461b-94a6-aee5b863fc60" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          <li class="tp" data-city="파주" data-min="13" data-theme="nature" data-top="0" data-x="185.7" data-y="344.9">
+            <div class="tp-h"><h3>퍼스트가든</h3><span class="tp-t">차로 약 13분 · 5.7km</span></div>
+            <p class="tp-m">파주 · 수목원ㆍ정원</p>
+            <p class="tp-w">정원 산책 뒤 저녁은 소도 커먼즈에서, 하루를 파주 안에서 느긋하게 이어갈 수 있습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8D%BC%EC%8A%A4%ED%8A%B8%EA%B0%80%EB%93%A0,37.732645,126.794974" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9290abf1-d7ca-4c1d-a4d1-352ec5693726" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
           </li>
-          <li class="spot">
-            <span class="no" aria-hidden="true">07</span>
-            <h3>보광사<span class="dir">소도호텔에서 동쪽</span></h3>
-            <div class="dist">차로 약 28분<small>17.3km</small></div>
-            <p class="desc">고령산 자락에 자리한 오랜 산사로, 숲길과 옛 전각이 고요합니다.</p>
-            <p class="why">산사의 고요를 '도심 속 작은 섬' 소도에서 그대로 이어, 마장호수와 묶은 동쪽 하루 코스를 조용히 마무리하세요.</p>
-            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%B3%B4%EA%B4%91%EC%82%AC,37.75295081,126.92001026" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=ff83cca2-5364-4fab-92d1-eb787abe7874" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          <li class="tp" data-city="파주" data-min="13" data-theme="history" data-top="0" data-x="222.8" data-y="331.1">
+            <div class="tp-h"><h3>파주 삼릉 [유네스코 세계유산]</h3><span class="tp-t">차로 약 13분 · 6.2km</span></div>
+            <p class="tp-m">파주 · 고분, 능</p>
+            <p class="tp-w">왕릉 숲길을 천천히 걷고, 가까운 금촌의 소도에서 차분한 저녁으로 이어가기 좋습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%20%EC%82%BC%EB%A6%89%20%5B%EC%9C%A0%EB%84%A4%EC%8A%A4%EC%BD%94%20%EC%84%B8%EA%B3%84%EC%9C%A0%EC%82%B0%5D,37.742806,126.829501" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=e2e63dd6-c825-4474-97dd-c3dd3402b1bd" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
           </li>
-          <li class="spot">
-            <span class="no" aria-hidden="true">08</span>
-            <h3>파주임진각평화곤돌라<span class="dir">소도호텔에서 북쪽</span></h3>
-            <div class="dist">차로 약 29분<small>17.9km</small></div>
-            <p class="desc">임진강 위를 건너 민간인통제선 안쪽까지 다녀오는 곤돌라입니다.</p>
-            <p class="why">전날 소도에 묵으면 탑승장까지 29분이라, 줄이 길어지기 전 이른 시간에 탑승하기 좋습니다.</p>
-            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%EC%9E%84%EC%A7%84%EA%B0%81%ED%8F%89%ED%99%94%EA%B3%A4%EB%8F%8C%EB%9D%BC,37.89145681,126.74028509" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=32e53c71-aa79-4943-9ca6-b0a1d93acb45" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          <li class="tp" data-city="파주" data-min="13" data-theme="history" data-top="0" data-x="95.4" data-y="295.1">
+            <div class="tp-h"><h3>파주 장릉(인조·인열왕후) [유네스코 세계유산]</h3><span class="tp-t">차로 약 13분 · 6.8km</span></div>
+            <p class="tp-m">파주 · 고분, 능</p>
+            <p class="tp-w">세계유산 왕릉의 고즈넉함을 본 뒤, 가까운 소도에서 조용한 하루를 완성하세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%20%EC%9E%A5%EB%A6%89(%EC%9D%B8%EC%A1%B0%C2%B7%EC%9D%B8%EC%97%B4%EC%99%95%ED%9B%84)%20%5B%EC%9C%A0%EB%84%A4%EC%8A%A4%EC%BD%94%20%EC%84%B8%EA%B3%84%EC%9C%A0%EC%82%B0%5D,37.769362,126.710943" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=f3648beb-7b9c-4173-afcd-d9a598a22f64" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
           </li>
-          <li class="spot">
-            <span class="no" aria-hidden="true">09</span>
-            <h3>파주 임진각 (평화누리공원)<span class="dir">소도호텔에서 북쪽</span></h3>
-            <div class="dist">차로 약 29분<small>18.0km</small></div>
-            <p class="desc">넓은 잔디 언덕과 바람개비, 자유의 다리가 있는 평화 관광의 출발점입니다.</p>
-            <p class="why">소도를 거점으로 두면 임진각과 곤돌라를 반나절에 돌아보고, 오후에는 헤이리까지 이어갈 수 있습니다.</p>
-            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9E%84%EC%A7%84%EA%B0%81%20%ED%8F%89%ED%99%94%EB%88%84%EB%A6%AC%EA%B3%B5%EC%9B%90,37.89227563,126.74392019" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=197e6e5e-b111-4561-9edc-2579205d9151" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          <li class="tp" data-city="파주" data-min="13" data-theme="nature" data-top="0" data-x="99.5" data-y="357">
+            <div class="tp-h"><h3>교하중앙공원</h3><span class="tp-t">차로 약 13분 · 7.9km</span></div>
+            <p class="tp-m">파주 · 시민공원</p>
+            <p class="tp-w">맨발 산책으로 가벼워진 몸, 소도의 편백 사우나 객실에서 한 번 더 풀어 주세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B5%90%ED%95%98%EC%A4%91%EC%95%99%EA%B3%B5%EC%9B%90,37.7237,126.7147" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=09500dff-d5da-44d9-8296-fe7951299c35" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
           </li>
-          <li class="spot">
-            <span class="no" aria-hidden="true">10</span>
-            <h3>감악산 출렁다리<span class="dir">소도호텔에서 북동쪽</span></h3>
-            <div class="dist">차로 약 43분<small>38.6km</small></div>
-            <p class="desc">감악산 산허리에 걸린 출렁다리로, 계곡과 능선을 잇는 산행의 들머리입니다.</p>
-            <p class="why">열 곳 중 가장 먼 여정이니, 산행 뒤 먼 길을 바로 돌아가는 대신 소도의 편백 사우나 객실에서 하루 쉬어 가세요.</p>
-            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B0%90%EC%95%85%EC%82%B0%EC%B6%9C%EB%A0%81%EB%8B%A4%EB%A6%AC,37.93642596,126.94444206" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=de772d8a-a59a-4a1f-bb74-f914fb541bd2" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          <li class="tp" data-city="파주" data-min="14" data-theme="nature" data-top="1" data-x="136.8" data-y="362.2">
+            <div class="tp-h"><h3>운정호수공원</h3><span class="tp-t">차로 약 14분 · 8.8km</span></div>
+            <p class="tp-m"><span class="pop">인기</span>파주 · 주제공원</p>
+            <p class="tp-d">운정신도시 한가운데 펼쳐진 호수공원으로, 물가를 따라 걷는 산책로와 저녁 풍경이 좋습니다.</p>
+            <p class="tp-w">인기 여행지 열 곳 중 가장 가까워, 체크인 뒤 저녁 산책만 다녀와도 파주에서의 첫날이 채워집니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9A%B4%EC%A0%95%ED%98%B8%EC%88%98%EA%B3%B5%EC%9B%90,37.71987144,126.74948275" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=b9c20ef9-cb31-45ab-8bb6-5e047c788fa8" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
           </li>
-        </ol>
-      </div>
-      <div class="more-travel">
-        <h3>소도에서 다녀오는 파주·고양 여행지 97곳</h3>
-        <details>
-          <summary><span>파주 여행지 53곳<small>차로 약 9분~47분 · 가까운 순</small></span></summary>
-          <ul class="mlist">
-            <li><b>조인폴리아<small>전문상가</small></b><span class="mt">차로 약 9분 · 3.4km</span><p>소도에서 가장 가까운 여행지로, 체크인 전이나 체크아웃 뒤 가볍게 들러 식물을 구경하기 좋습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%A1%B0%EC%9D%B8%ED%8F%B4%EB%A6%AC%EC%95%84,37.779534,126.801386" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=779268e9-d91d-43bb-b4fd-0869c850028e" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>봉일천종합시장<small>상설시장</small></b><span class="mt">차로 약 10분 · 4.1km</span><p>오래된 시장 구경으로 출출함을 달래고, 가까운 소도에서 느긋한 저녁을 보내세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%B4%89%EC%9D%BC%EC%B2%9C%EC%A2%85%ED%95%A9%EC%8B%9C%EC%9E%A5,37.743483,126.807975" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=d19b4009-0298-449b-ad4d-0f6c540468b8" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>월롱시민공원<small>시민공원</small></b><span class="mt">차로 약 12분 · 5.1km</span><p>소도에서 가까운 나들이 공원이라, 체크아웃 뒤 가볍게 들르기 좋습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9B%94%EB%A1%B1%EC%8B%9C%EB%AF%BC%EA%B3%B5%EC%9B%90,37.797394,126.769637" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=6a9f9450-2267-4e4f-8eda-ee1881e44675" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>파주놀이구름<small>체험관광</small></b><span class="mt">차로 약 12분 · 6.4km</span><p>아이와 종일 논 날은 침대가 둘인 시그니처 트윈에서 온 가족이 함께 쉬어 가기 좋습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%EB%86%80%EC%9D%B4%EA%B5%AC%EB%A6%84,37.722838,126.759128" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=82bcee35-001e-4cfc-99cf-21a244aed260" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>교하동 고인돌 산림욕장<small>선사유적지</small></b><span class="mt">차로 약 13분 · 5.6km</span><p>산림욕으로 맑아진 몸을, 편백 향이 도는 사우나 객실에서 한 번 더 쉬게 해 주세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B5%90%ED%95%98%EB%8F%99%20%EA%B3%A0%EC%9D%B8%EB%8F%8C%20%EC%82%B0%EB%A6%BC%EC%9A%95%EC%9E%A5,37.746362,126.740555" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=77394fee-895d-4d7c-b8bc-b07e42fcfe29" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>퍼스트가든<small>수목원ㆍ정원</small></b><span class="mt">차로 약 13분 · 5.7km</span><p>정원 산책 뒤 저녁은 소도 커먼즈에서, 하루를 파주 안에서 느긋하게 이어갈 수 있습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8D%BC%EC%8A%A4%ED%8A%B8%EA%B0%80%EB%93%A0,37.732645,126.794974" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9290abf1-d7ca-4c1d-a4d1-352ec5693726" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>파주 삼릉 [유네스코 세계유산]<small>고분, 능</small></b><span class="mt">차로 약 13분 · 6.2km</span><p>왕릉 숲길을 천천히 걷고, 가까운 금촌의 소도에서 차분한 저녁으로 이어가기 좋습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%20%EC%82%BC%EB%A6%89%20%5B%EC%9C%A0%EB%84%A4%EC%8A%A4%EC%BD%94%20%EC%84%B8%EA%B3%84%EC%9C%A0%EC%82%B0%5D,37.742806,126.829501" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=e2e63dd6-c825-4474-97dd-c3dd3402b1bd" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>파주 장릉(인조·인열왕후) [유네스코 세계유산]<small>고분, 능</small></b><span class="mt">차로 약 13분 · 6.8km</span><p>세계유산 왕릉의 고즈넉함을 본 뒤, 가까운 소도에서 조용한 하루를 완성하세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%20%EC%9E%A5%EB%A6%89(%EC%9D%B8%EC%A1%B0%C2%B7%EC%9D%B8%EC%97%B4%EC%99%95%ED%9B%84)%20%5B%EC%9C%A0%EB%84%A4%EC%8A%A4%EC%BD%94%20%EC%84%B8%EA%B3%84%EC%9C%A0%EC%82%B0%5D,37.769362,126.710943" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=f3648beb-7b9c-4173-afcd-d9a598a22f64" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>교하중앙공원<small>시민공원</small></b><span class="mt">차로 약 13분 · 7.9km</span><p>맨발 산책으로 가벼워진 몸, 소도의 편백 사우나 객실에서 한 번 더 풀어 주세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B5%90%ED%95%98%EC%A4%91%EC%95%99%EA%B3%B5%EC%9B%90,37.7237,126.7147" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=09500dff-d5da-44d9-8296-fe7951299c35" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>운정체육공원<small>주제공원</small></b><span class="mt">차로 약 15분 · 6.8km</span><p>경기나 대회로 운정을 찾았다면, 땀에 젖은 옷은 소도 세탁실에서 해결하고 편히 쉬세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9A%B4%EC%A0%95%EC%B2%B4%EC%9C%A1%EA%B3%B5%EC%9B%90,37.73816,126.768341" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=25c1b0c6-01ff-4682-bdf5-e8438a8d1af4" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>경기미래교육 파주캠퍼스<small>체험관광</small></b><span class="mt">차로 약 15분 · 8.4km</span><p>이국적인 거리를 산책한 뒤, 소도 커먼즈 카페에서 여행의 여운을 이어가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B2%BD%EA%B8%B0%EB%AF%B8%EB%9E%98%EA%B5%90%EC%9C%A1%20%ED%8C%8C%EC%A3%BC%EC%BA%A0%ED%8D%BC%EC%8A%A4,37.785189,126.698527" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=09ec2be6-1221-48ce-bcc3-a6464344e36b" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>새암공원<small>시민공원</small></b><span class="mt">차로 약 15분 · 8.9km</span><p>운정의 조용한 산책 공원으로, 소도에 묵는 날 아침 산책 코스로 삼기 좋습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%83%88%EC%95%94%EA%B3%B5%EC%9B%90,37.709146,126.747432" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=e42d95fb-3f63-4379-8244-30ac7bf5a994" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>국립민속박물관 파주<small>박물관</small></b><span class="mt">차로 약 16분 · 9.1km</span><p>헤이리와 함께 둘러보면 하루가 모자라니, 소도에 묵고 이틀에 나눠 보세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B5%AD%EB%A6%BD%EB%AF%BC%EC%86%8D%EB%B0%95%EB%AC%BC%EA%B4%80%20%ED%8C%8C%EC%A3%BC,37.786668,126.693915" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=6d3b61c8-5b6d-4533-bd97-50ef92120a95" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>운정건강공원<small>시민공원</small></b><span class="mt">차로 약 16분 · 9.3km</span><p>운정에서 운동 경기를 마친 날, 가까운 소도에서 씻고 푹 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9A%B4%EC%A0%95%EA%B1%B4%EA%B0%95%EA%B3%B5%EC%9B%90,37.715481,126.741986" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=0311ee50-708f-474a-9de7-c236cda8c985" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>프로방스 마을<small>마을관광지</small></b><span class="mt">차로 약 17분 · 9.5km</span><p>야간 조명이 켜질 때까지 머물러도, 돌아갈 숙소가 가까운 소도라면 서두를 일이 없습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%94%84%EB%A1%9C%EB%B0%A9%EC%8A%A4%20%EB%A7%88%EC%9D%84,37.790348,126.684955" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9ebc227a-584a-4df7-aec8-608bc5fea446" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>황희선생묘<small>고분, 능</small></b><span class="mt">차로 약 17분 · 9.5km</span><p>조용한 역사 답사 뒤, 소도 객실에서 하루의 기록을 차분히 정리해 보세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%99%A9%ED%9D%AC%EC%84%A0%EC%83%9D%EB%AC%98,37.827655,126.75134" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=d2318272-e125-4992-a54f-bef27e207e1e" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>한국근현대사박물관<small>박물관</small></b><span class="mt">차로 약 17분 · 9.5km</span><p>추억의 골목을 걷고 나온 저녁, 소도 커먼즈 펍에서 옛이야기를 이어가기 좋습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%95%9C%EA%B5%AD%EA%B7%BC%ED%98%84%EB%8C%80%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80,37.790873,126.695202" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=1db5567f-93f1-4e8e-833b-3cd6d6867053" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>쥬라리움 파주점<small>동물원</small></b><span class="mt">차로 약 17분 · 9.5km</span><p>동물 체험으로 들뜬 하루, 넉넉한 킹사이즈 침대가 있는 소도에서 편히 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%A5%AC%EB%9D%BC%EB%A6%AC%EC%9B%80%20%ED%8C%8C%EC%A3%BC%EC%A0%90,37.790421,126.684998" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=2d2a9d0a-42b5-44ea-92e7-0e7f587fe1d8" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>파주공룡박물관<small>박물관</small></b><span class="mt">차로 약 17분 · 9.7km</span><p>아이의 공룡 이야기가 밤까지 이어질 테니, 온 가족이 함께 묵는 시그니처 트윈을 추천합니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%EA%B3%B5%EB%A3%A1%EB%B0%95%EB%AC%BC%EA%B4%80,37.791001,126.696951" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=49b32100-1dd4-4cd3-aa4a-1f8396c40317" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>모산목장<small>체험목장</small></b><span class="mt">차로 약 17분 · 9.7km</span><p>아이와 낙농 체험을 한 날은 소도에서 하루 묵고, 다음 날 헤이리까지 이어가 보세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%AA%A8%EC%82%B0%EB%AA%A9%EC%9E%A5,37.802291,126.724012" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9d8d41cf-f3d3-4981-b6ce-d09425873955" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>롯데프리미엄아울렛 파주점<small>아웃렛</small></b><span class="mt">차로 약 17분 · 10.6km</span><p>두 손 가득한 쇼핑백은 객실에 풀어놓고, 다음 날 12시 체크아웃까지 천천히 정리하세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%A1%AF%EB%8D%B0%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%EC%95%84%EC%9A%B8%EB%A0%9B%20%ED%8C%8C%EC%A3%BC%EC%A0%90,37.717819,126.693762" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=e164b7f1-9c06-4b17-84f5-5a24623b2ec2" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>네이처스파<small>찜질방</small></b><span class="mt">차로 약 17분 · 10.9km</span><p>스파로 몸을 푼 날은 멀리 운전하지 말고, 가까운 소도의 킹사이즈 침대에서 그대로 잠드세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%84%A4%EC%9D%B4%EC%B2%98%EC%8A%A4%ED%8C%8C,37.708936,126.704325" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=2415e5aa-0412-4c47-a1f9-f29475c9ca4a" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>미메시스 아트 뮤지엄<small>미술관·화랑</small></b><span class="mt">차로 약 17분 · 10.9km</span><p>건축과 전시를 천천히 음미한 날, 단정한 소도 객실이 그 여백을 이어 줍니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%AF%B8%EB%A9%94%EC%8B%9C%EC%8A%A4%20%EC%95%84%ED%8A%B8%20%EB%AE%A4%EC%A7%80%EC%97%84,37.716516,126.688875" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=73a2ac61-d666-4007-9ee8-3e5913e80b78" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>통일동산 관광특구<small>관광단지</small></b><span class="mt">차로 약 18분 · 9.2km</span><p>오두산 전망대와 헤이리를 품은 관광특구라, 소도를 거점으로 하루 종일 머물기 좋습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%86%B5%EC%9D%BC%EB%8F%99%EC%82%B0%20%EA%B4%80%EA%B4%91%ED%8A%B9%EA%B5%AC,37.782096,126.690206" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=5296a4e8-81ed-4138-abdd-bbcab0344042" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>자유로자동차극장<small>영화관</small></b><span class="mt">차로 약 18분 · 10.5km</span><p>늦은 밤 영화가 끝나도 소도가 가까우니, 심야 장거리 운전 대신 그대로 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9E%90%EC%9C%A0%EB%A1%9C%EC%9E%90%EB%8F%99%EC%B0%A8%EA%B7%B9%EC%9E%A5,37.834723,126.735478" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=d467e128-8da8-4ebb-a7ae-b832a7c97655" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>소울원<small>수목원ㆍ정원</small></b><span class="mt">차로 약 18분 · 10.7km</span><p>꽃과 나무 사이에서 쉰 하루를, 소도의 조용한 객실에서 온전히 이어가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%86%8C%EC%9A%B8%EC%9B%90,37.805861,126.734727" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=50015373-6384-4880-8fb0-d3bae9313906" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>파주출판단지근린공원<small>근린공원</small></b><span class="mt">차로 약 18분 · 11.2km</span><p>출판도시 산책의 쉼표 같은 공원으로, 소도에 묵으면 책의 도시를 이틀에 걸쳐 볼 수 있습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%EC%B6%9C%ED%8C%90%EB%8B%A8%EC%A7%80%EA%B7%BC%EB%A6%B0%EA%B3%B5%EC%9B%90,37.7196,126.6882" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=313d0e66-c43b-48fb-9656-9f69e8133eda" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>통일공원(파주)<small>안보관광시설</small></b><span class="mt">차로 약 18분 · 12.3km</span><p>통일로변에 있는 공원으로, 소도에서 임진각으로 가는 길에 잠시 들르기 좋습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%86%B5%EC%9D%BC%EA%B3%B5%EC%9B%90(%ED%8C%8C%EC%A3%BC),37.851317,126.793431" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=5b8cfe60-3c7f-4cc5-b01a-4f85505ce813" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>우농타조농장<small>기타산업관광지</small></b><span class="mt">차로 약 20분 · 11.2km</span><p>농장 체험 뒤 흙 묻은 옷은 소도 세탁실에서 해결하고, 가족이 함께 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9A%B0%EB%86%8D%ED%83%80%EC%A1%B0%EB%86%8D%EC%9E%A5,37.705466,126.713565" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=4aefba87-4593-4703-93ca-78f121bebb9f" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>문산자유시장<small>상설시장</small></b><span class="mt">차로 약 20분 · 11.6km</span><p>시장 먹거리로 배를 채운 뒤에는 소도 커먼즈 카페에서 커피 한 잔으로 마무리하세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%AC%B8%EC%82%B0%EC%9E%90%EC%9C%A0%EC%8B%9C%EC%9E%A5,37.856931,126.784753" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=322071c4-ca4e-4d99-b9c5-3ea996a2c55d" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>파주 출판도시<small>기타산업관광지</small></b><span class="mt">차로 약 20분 · 12.0km</span><p>책방과 북카페에서 고른 책 한 권, 조용한 소도 객실에서 밤새 읽기 좋습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%20%EC%B6%9C%ED%8C%90%EB%8F%84%EC%8B%9C,37.708288,126.686665" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=fa366c70-25f4-4374-8a39-38bade391fb2" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>열화당책박물관<small>박물관</small></b><span class="mt">차로 약 20분 · 12.0km</span><p>책의 시간을 걷고 온 날, 소도 객실의 라운지 체어에서 그 여운을 조용히 이어가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%97%B4%ED%99%94%EB%8B%B9%EC%B1%85%EB%B0%95%EB%AC%BC%EA%B4%80,37.708967,126.684675" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=8af82bd4-8698-450f-8fa7-b51d9a578c52" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>용암사(파주)<small>불교</small></b><span class="mt">차로 약 20분 · 13.0km</span><p>산사를 둘러본 고요한 마음을, 도심 속 작은 섬 소도에서 흐트러짐 없이 이어가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9A%A9%EC%95%94%EC%82%AC(%ED%8C%8C%EC%A3%BC),37.753733,126.865076" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=27b19280-8df6-49e2-a2a1-5a169f0ef678" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>파주팜랜드<small>체험관광</small></b><span class="mt">차로 약 22분 · 12.2km</span><p>목장 풍경 속에서 하루를 보낸 뒤, 씻고 눕기 편한 소도 객실로 돌아오세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%ED%8C%9C%EB%9E%9C%EB%93%9C,37.810037,126.692379" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=e6ad49b4-5b40-45e5-a0e3-252598bae66b" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>원더클럽 파주CC<small>골프</small></b><span class="mt">차로 약 22분 · 19.2km</span><p>라운딩 뒤 뭉친 몸은 편백나무 건식 사우나 객실에서 풀고 하루 더 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9B%90%EB%8D%94%ED%81%B4%EB%9F%BD%20%ED%8C%8C%EC%A3%BCCC,37.848081,126.899765" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=ef2e81b9-4dd0-47d7-b2df-b86cc00ee115" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>화석정<small>기타역사유적지</small></b><span class="mt">차로 약 23분 · 16.0km</span><p>임진강을 내려다보는 정자에서 느긋이 머물고, 저녁은 소도에서 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%99%94%EC%84%9D%EC%A0%95,37.887648,126.80546" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=0c77c813-8255-4265-8964-666fdf83f03a" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>황희선생유적지·반구정<small>기타역사유적지</small></b><span class="mt">차로 약 24분 · 16.6km</span><p>임진강가 정자의 풍경을 느긋하게 즐기고, 해가 진 뒤에는 소도로 돌아와 쉬세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%99%A9%ED%9D%AC%EC%84%A0%EC%83%9D%EC%9C%A0%EC%A0%81%EC%A7%80%C2%B7%EB%B0%98%EA%B5%AC%EC%A0%95,37.867865,126.752704" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=2818a2e3-5192-4d45-b744-e58d3a98ab5d" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>율곡수목원<small>수목원ㆍ정원</small></b><span class="mt">차로 약 24분 · 18.1km</span><p>숲길을 오래 걸은 날에는 편백 사우나 객실에서 다리의 피로를 풀어보세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9C%A8%EA%B3%A1%EC%88%98%EB%AA%A9%EC%9B%90,37.898311,126.822863" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=a13192fb-d288-4229-86c1-149e731c191c" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>서원밸리 컨트리클럽<small>골프</small></b><span class="mt">차로 약 26분 · 15.6km</span><p>이른 티오프 전날 소도에 묵으면 새벽 운전이 짧아지고, 무료 주차라 골프백을 실은 차도 편합니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%84%9C%EC%9B%90%EB%B0%B8%EB%A6%AC%20%EC%BB%A8%ED%8A%B8%EB%A6%AC%ED%81%B4%EB%9F%BD,37.816523,126.894783" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=7cc2e8c9-6aa9-4ff5-ab1a-6f4826c74e51" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>발랑저수지<small>저수지</small></b><span class="mt">차로 약 27분 · 15.8km</span><p>새벽 풍경이 가장 아름다운 곳이라, 전날 소도에 묵어야 그 시간에 닿을 수 있습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%B0%9C%EB%9E%91%EC%A0%80%EC%88%98%EC%A7%80,37.807133,126.905744" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=52d0af4c-5826-4333-8a5e-7c1fb86ba7df" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>자운서원<small>사당</small></b><span class="mt">차로 약 27분 · 19.8km</span><p>율곡의 자취를 따라 걷는 역사 여행, 소도를 거점으로 화석정까지 하루에 묶을 수 있습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9E%90%EC%9A%B4%EC%84%9C%EC%9B%90,37.866133,126.870984" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=53b6d99b-35eb-411f-b052-487ea64db8a7" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>파주 율곡습지공원<small>생태습지</small></b><span class="mt">차로 약 27분 · 20.9km</span><p>꽃이 피는 계절엔 이른 아침이 가장 한적하니, 소도에서 자고 먼저 도착해 보세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%20%EC%9C%A8%EA%B3%A1%EC%8A%B5%EC%A7%80%EA%B3%B5%EC%9B%90,37.889488,126.813559" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=95194069-1fc5-46b4-84b1-d450655893ce" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>DMZ 생생누리<small>안보관광시설</small></b><span class="mt">차로 약 28분 · 18.0km</span><p>임진각 일대를 하루에 다 보려면 이른 출발이 답이라, 전날 소도 숙박이 일정을 넉넉하게 만듭니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/DMZ%20%EC%83%9D%EC%83%9D%EB%88%84%EB%A6%AC,37.89053,126.73972" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=2c00408c-6333-426a-b227-e29737f7133d" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>캠프 그리브스<small>안보관광시설</small></b><span class="mt">임진각까지 약 28분 · 18.0km</span><p>민통선 안쪽이라 임진각에서 출발하는 일정에 맞춰야 하니, 전날 소도에 묵고 여유 있게 나서세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%EC%9E%84%EC%A7%84%EA%B0%81%ED%8F%89%ED%99%94%EA%B3%A4%EB%8F%8C%EB%9D%BC,37.89145,126.740277" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=747ab116-9f25-4a1b-975a-4db70b0cafe9" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>평화랜드<small>테마파크</small></b><span class="mt">차로 약 28분 · 18.0km</span><p>밤 야경까지 즐긴 뒤에는 멀리 가지 말고, 소도에서 하루를 마무리하세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8F%89%ED%99%94%EB%9E%9C%EB%93%9C,37.890375,126.741938" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=e8fb19cb-ea7d-492f-9184-c5ae902e16e1" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>제3땅굴<small>안보유적지</small></b><span class="mt">임진각까지 약 28분 · 18.0km</span><p>민통선 안쪽이라 임진각에서 출발하는 DMZ 관광을 이용해야 하니, 전날 소도 숙박이 가장 확실한 준비입니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%EC%9E%84%EC%A7%84%EA%B0%81%ED%8F%89%ED%99%94%EA%B3%A4%EB%8F%8C%EB%9D%BC,37.89145,126.740277" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=77bfaf47-b988-44ef-af51-9f9ba02e3932" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>마장호수<small>호수</small></b><span class="mt">차로 약 29분 · 17.6km</span><p>호수 물빛과 낙조를 끝까지 보고도 숙소 걱정이 없도록, 소도를 돌아올 자리로 정해 두세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%A7%88%EC%9E%A5%ED%98%B8%EC%88%98,37.7752,126.9301" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=f0d1ff25-0f58-4a6c-b6ae-c5dcd1ee975b" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>파주가야랜드<small>온천·사우나·스파</small></b><span class="mt">차로 약 29분 · 19.1km</span><p>온천으로 데운 몸 그대로, 가까운 소도의 포근한 침대에서 하루를 마무리하세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%EA%B0%80%EC%95%BC%EB%9E%9C%EB%93%9C,37.851252,126.856729" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=3f01461f-9aab-486e-94b2-2bf8a411b687" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>쇠꼴마을<small>체험마을</small></b><span class="mt">차로 약 30분 · 22.9km</span><p>아이와 체험을 마친 뒤, 침대가 넉넉한 시그니처 트윈에서 가족이 함께 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%87%A0%EA%BC%B4%EB%A7%88%EC%9D%84,37.882224,126.869883" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=7a757ccc-1ca0-406c-9be6-316e13b56c42" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>파평체육공원<small>근린공원</small></b><span class="mt">차로 약 32분 · 24.4km</span><p>경기 일정으로 파평을 찾는 팀이라면, 세탁실과 무료 주차가 있는 소도가 편한 숙소가 됩니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%ED%8F%89%EC%B2%B4%EC%9C%A1%EA%B3%B5%EC%9B%90,37.932017,126.867036" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=d2db4083-51c3-4094-88d2-8a214bf312c2" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>임진강 황포돛배<small>유람선·잠수함관광</small></b><span class="mt">차로 약 37분 · 30.2km</span><p>임진강 뱃길은 파주 북쪽 끝이라, 소도에 하루 묵으며 다녀오면 당일치기보다 한결 여유롭습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9E%84%EC%A7%84%EA%B0%95%20%ED%99%A9%ED%8F%AC%EB%8F%9B%EB%B0%B0,37.965016,126.889686" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=6745bba3-af7b-496b-8d38-a944f9c7b17d" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>임진강 한우마을<small>마을관광지</small></b><span class="mt">차로 약 40분 · 29.8km</span><p>한우로 든든히 먹은 저녁, 먼 귀갓길 대신 소도에서 편안한 밤을 보내세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9E%84%EC%A7%84%EA%B0%95%20%ED%95%9C%EC%9A%B0%EB%A7%88%EC%9D%84,37.957106,126.91632" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=0364b342-dba4-4aec-b4b9-1b6317f4dc7c" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>산머루농원<small>기타산업관광지</small></b><span class="mt">차로 약 47분 · 37.3km</span><p>머루 와인은 사 들고 와서, 운전을 마친 뒤 소도 객실에서 느긋하게 즐기세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%82%B0%EB%A8%B8%EB%A3%A8%EB%86%8D%EC%9B%90,37.960245,126.957923" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=bbc92890-9e96-4f2f-b208-f1e06d2be1a6" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-          </ul>
-        </details>
-        <details>
-          <summary><span>고양 여행지 44곳<small>차로 약 14분~31분 · 가까운 순</small></span></summary>
-          <ul class="mlist">
-            <li><b>일산가구단지<small>전문상가</small></b><span class="mt">차로 약 14분 · 9.1km</span><p>가구를 둘러보느라 지친 다리, 시몬스 침대가 있는 소도 객실에서 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9D%BC%EC%82%B0%EA%B0%80%EA%B5%AC%EB%8B%A8%EC%A7%80,37.700466,126.758606" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9ad54c6d-2aed-43ec-9a8d-ebc6f3df00d4" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>덕이동 로데오거리<small>기타쇼핑시설</small></b><span class="mt">차로 약 15분 · 10.1km</span><p>소도에서 가까운 일산 쇼핑 거리로, 고른 옷은 객실 스타일러에 걸어 두세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%8D%95%EC%9D%B4%EB%8F%99%20%EB%A1%9C%EB%8D%B0%EC%98%A4%EA%B1%B0%EB%A6%AC,37.692898,126.75591" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=675947c0-4dc6-47bc-9e5a-70466f70f657" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>일산 어린이천문대<small>천문대</small></b><span class="mt">차로 약 16분 · 9.5km</span><p>별을 보고 나온 늦은 밤, 가까운 소도에서 아이와 함께 편히 잠드세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9D%BC%EC%82%B0%20%EC%96%B4%EB%A6%B0%EC%9D%B4%EC%B2%9C%EB%AC%B8%EB%8C%80,37.700352,126.79109" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=3e598a55-f3c7-4a4e-aafe-fdffd6320265" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>중산체육공원<small>주제공원</small></b><span class="mt">차로 약 17분 · 10.0km</span><p>경기를 뛰고 난 뒤, 소도 세탁실과 편백 사우나 객실로 옷과 몸을 함께 정리하세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%A4%91%EC%82%B0%EC%B2%B4%EC%9C%A1%EA%B3%B5%EC%9B%90,37.6918,126.7787" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=5b1796c9-accf-48c2-b2dd-c715f926d57b" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>고양 피크닉시민공원<small>시민공원</small></b><span class="mt">차로 약 17분 · 11.1km</span><p>피크닉으로 보낸 오후 뒤, 소도 커먼즈 카페에서 하루를 마무리하세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%20%ED%94%BC%ED%81%AC%EB%8B%89%EC%8B%9C%EB%AF%BC%EA%B3%B5%EC%9B%90,37.685361,126.748622" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=8fd0344a-c6ca-49bf-8cae-307440a0f405" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>쥬쥬랜드<small>테마파크</small></b><span class="mt">차로 약 17분 · 15.3km</span><p>동물과 놀이를 즐긴 뒤, 아이와 함께 넉넉한 침대에서 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%A5%AC%EC%A5%AC%EB%9E%9C%EB%93%9C,37.690133,126.855304" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=56488ba6-2e8e-4b35-bd40-4c25c45583d2" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>일산시장<small>비상설시장</small></b><span class="mt">차로 약 19분 · 11.5km</span><p>장터 구경을 마치고, 한적한 금촌의 소도에서 하루를 마무리하세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9D%BC%EC%82%B0%EC%8B%9C%EC%9E%A5,37.685625,126.770826" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=ea35d6f5-e00d-4b61-ae82-66dca572ae2c" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>성라공원<small>시민공원</small></b><span class="mt">차로 약 19분 · 20.6km</span><p>숲 산책으로 쉬어 간 하루를 소도의 조용한 객실에서 이어가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%84%B1%EB%9D%BC%EA%B3%B5%EC%9B%90,37.651,126.8399" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=f5e599ed-51dc-4775-bf7b-d071a7bc1b3f" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>성저공원<small>근린공원</small></b><span class="mt">차로 약 20분 · 12.1km</span><p>언덕 숲길을 가볍게 걷고, 소도에서 느긋한 저녁을 맞이하세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%84%B1%EC%A0%80%EA%B3%B5%EC%9B%90,37.681904,126.75539" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=45414445-96ea-4320-95a7-a603a658ff8b" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>선인장다육식물연구소<small>수목원ㆍ정원</small></b><span class="mt">차로 약 20분 · 12.9km</span><p>선인장과 다육식물을 둘러본 뒤, 소도에서 하루 묵고 파주의 정원 여행으로 이어가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%84%A0%EC%9D%B8%EC%9E%A5%EB%8B%A4%EC%9C%A1%EC%8B%9D%EB%AC%BC%EC%97%B0%EA%B5%AC%EC%86%8C,37.685492,126.731337" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=730c7810-1ece-4b25-b8f4-c5adf73e831a" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>필리핀군 참전기념비<small>안보유적지</small></b><span class="mt">차로 약 20분 · 16.6km</span><p>참전의 역사를 돌아본 뒤, 소도를 거점으로 임진각까지 평화 여행을 이어가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%95%84%EB%A6%AC%ED%95%80%EA%B5%B0%20%EC%B0%B8%EC%A0%84%EA%B8%B0%EB%85%90%EB%B9%84,37.6884,126.8729" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=a9d5f5ec-517f-4ba7-9dc7-2276ac72633b" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>고양생태공원<small>생태관광지</small></b><span class="mt">차로 약 21분 · 11.8km</span><p>생태 탐방으로 차분해진 하루를 소도의 조용한 객실에서 이어가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%EC%83%9D%ED%83%9C%EA%B3%B5%EC%9B%90,37.683948,126.744128" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=e3e094ef-25b4-43a6-ac8b-86aed659f046" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>원당시장<small>상설시장</small></b><span class="mt">차로 약 21분 · 19.9km</span><p>전통시장의 인심을 맛보고, 저녁은 소도에서 조용히 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9B%90%EB%8B%B9%EC%8B%9C%EC%9E%A5,37.656281,126.837253" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=0457cdd7-6fd2-4510-8135-692e984cc960" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>정혜사<small>불교</small></b><span class="mt">차로 약 21분 · 22.5km</span><p>도심 사찰에서 마음을 고른 뒤, 소도에서 고요한 밤을 이어가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%A0%95%ED%98%9C%EC%82%AC,37.648911,126.793745" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=a7aa7688-7fec-457f-9ad5-614937c5b91f" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>안곡습지공원<small>생태습지</small></b><span class="mt">차로 약 22분 · 12.1km</span><p>습지 산책으로 느려진 걸음 그대로, 소도에서 여유로운 저녁을 보내세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%95%88%EA%B3%A1%EC%8A%B5%EC%A7%80%EA%B3%B5%EC%9B%90,37.684023,126.784494" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=e82721f1-e781-47ba-b6a7-06ebdda4db3a" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>현대 모터스튜디오 고양<small>전시관</small></b><span class="mt">차로 약 22분 · 13.2km</span><p>자동차 전시를 본 다음 날은, 소도에서 출발해 파주 드라이브로 이어가 보세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%98%84%EB%8C%80%20%EB%AA%A8%ED%84%B0%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%20%EA%B3%A0%EC%96%91,37.666206,126.747683" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=f8643c1e-4e8e-4791-8945-91ffb9188260" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>킨텍스<small>컨벤션센터</small></b><span class="mt">차로 약 22분 · 13.4km</span><p>전시·박람회 일정이라면 행사장 주변의 혼잡을 피해, 무료 주차가 되는 소도에 묵어 보세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%82%A8%ED%85%8D%EC%8A%A4,37.668936,126.745564" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=11661754-7237-40c8-a771-ea6ef50e30db" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>지도공원<small>근린공원</small></b><span class="mt">차로 약 22분 · 24.5km</span><p>가벼운 산책과 운동을 마치고, 소도에서 편안히 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%A7%80%EB%8F%84%EA%B3%B5%EC%9B%90,37.624944,126.826722" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=edf5b013-8936-4de7-a660-6693e9aad4e9" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>대화동레포츠공원<small>시민공원</small></b><span class="mt">차로 약 23분 · 14.1km</span><p>운동으로 땀 흘린 날, 편백 사우나 객실에서 개운하게 마무리하세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%8C%80%ED%99%94%EB%8F%99%EB%A0%88%ED%8F%AC%EC%B8%A0%EA%B3%B5%EC%9B%90,37.671666,126.737873" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=389281f0-b81f-4945-90b1-5b456361c95e" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>신원체육공원<small>근린공원</small></b><span class="mt">차로 약 23분 · 19.3km</span><p>경기 일정이 있는 날, 무료 주차와 세탁실이 있는 소도를 숙소로 삼아 보세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%8B%A0%EC%9B%90%EC%B2%B4%EC%9C%A1%EA%B3%B5%EC%9B%90,37.675987,126.876485" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=274a6458-c676-431c-ae34-b7627e0099e0" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>고양 어울림누리<small>공연장</small></b><span class="mt">차로 약 23분 · 20.7km</span><p>공연이나 경기를 본 저녁, 소도에서 여유롭게 하루를 닫으세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%20%EC%96%B4%EC%9A%B8%EB%A6%BC%EB%88%84%EB%A6%AC,37.648414,126.834618" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=b5f3efd7-db1d-423d-9372-3dd825998ed9" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>고양어린이박물관<small>박물관</small></b><span class="mt">차로 약 23분 · 24.5km</span><p>아이와 체험을 마친 날, 온 가족이 함께 묵는 시그니처 트윈에서 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%B0%95%EB%AC%BC%EA%B4%80,37.62942,126.830912" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=24993f58-d65a-4720-8250-c86da836c194" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>행주산성<small>성ㆍ산성ㆍ성곽</small></b><span class="mt">차로 약 23분 · 26.4km</span><p>한강을 내려다본 뒤 북쪽으로 올라오면, 파주 여행의 거점 소도에 닿습니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%96%89%EC%A3%BC%EC%82%B0%EC%84%B1,37.596066,126.826455" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=2f3031f7-c0b1-4688-9fb1-c2488d701616" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>충장근린체육공원<small>주제공원</small></b><span class="mt">차로 약 23분 · 26.5km</span><p>운동 경기를 마친 뒤, 소도 세탁실과 넉넉한 침대로 다음 날을 준비하세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%B6%A9%EC%9E%A5%EA%B7%BC%EB%A6%B0%EC%B2%B4%EC%9C%A1%EA%B3%B5%EC%9B%90,37.6147,126.8244" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=26eaa872-ab38-4241-a65f-8551ec5091c3" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>정발산공원<small>근린공원</small></b><span class="mt">차로 약 24분 · 13.5km</span><p>숲길 산책으로 가볍게 몸을 풀고, 소도에서 편안한 밤을 보내세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%A0%95%EB%B0%9C%EC%82%B0%EA%B3%B5%EC%9B%90,37.663,126.7785" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=28a62c7e-ab93-4b38-810e-e4c0f263b2bb" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>원마운트 워터파크<small>온천·사우나·스파</small></b><span class="mt">차로 약 24분 · 13.8km</span><p>물놀이로 젖은 옷은 소도 세탁실에서 말리고, 가족이 함께 푹 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9B%90%EB%A7%88%EC%9A%B4%ED%8A%B8%20%EC%9B%8C%ED%84%B0%ED%8C%8C%ED%81%AC,37.664553,126.754527" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=acb48e6a-9aad-4cf8-a9c7-5820c774e8ef" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>풍동 애니골<small>골목길, 문화거리</small></b><span class="mt">차로 약 24분 · 14.3km</span><p>애니골에서 저녁을 든든히 먹은 뒤, 소도에서 느긋한 밤을 보내세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%92%8D%EB%8F%99%20%EC%95%A0%EB%8B%88%EA%B3%A8,37.671567,126.789426" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=5c0de66a-adbb-44fd-bff2-53b3a142ef0d" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>스타필드 고양<small>복합쇼핑몰</small></b><span class="mt">차로 약 24분 · 21.9km</span><p>종일 쇼핑한 날, 새 옷은 객실 스타일러에 걸어 두고 편히 쉬세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%8A%A4%ED%83%80%ED%95%84%EB%93%9C%20%EA%B3%A0%EC%96%91,37.646977,126.894778" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=048220a0-be4c-4ee0-aec4-eb1e323b3c50" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>아쿠아필드 고양<small>워터파크</small></b><span class="mt">차로 약 24분 · 21.9km</span><p>물놀이와 찜질 뒤 나른한 몸, 소도의 킹사이즈 침대에 그대로 맡기세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%95%84%EC%BF%A0%EC%95%84%ED%95%84%EB%93%9C%20%EA%B3%A0%EC%96%91,37.646977,126.894778" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=1c67c2df-2245-4425-91fc-83de82395a33" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>스몹 고양<small>스포츠센터, 수련시설</small></b><span class="mt">차로 약 24분 · 21.9km</span><p>실내 스포츠로 몸을 실컷 쓴 날, 편백 사우나 객실에서 근육을 풀어 주세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%8A%A4%EB%AA%B9%20%EA%B3%A0%EC%96%91,37.646977,126.894778" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=4ab8f306-bdc7-4130-8988-5fc5298c7346" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>토당문화플랫폼<small>기타문화시설</small></b><span class="mt">차로 약 24분 · 24.6km</span><p>전시와 문화 프로그램을 즐긴 뒤, 소도에서 조용한 저녁을 보내세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%86%A0%EB%8B%B9%EB%AC%B8%ED%99%94%ED%94%8C%EB%9E%AB%ED%8F%BC,37.62074,126.819276" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=f283a955-4ac8-4a7e-81d4-5b95ea60ba20" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>아쿠아플라넷 일산<small>수족관·아쿠라리움</small></b><span class="mt">차로 약 25분 · 14.3km</span><p>아쿠아리움에서 하루를 보낸 뒤, 붐비는 일산을 벗어나 조용한 소도에서 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%95%84%EC%BF%A0%EC%95%84%ED%94%8C%EB%9D%BC%EB%84%B7%20%EC%9D%BC%EC%82%B0,37.663764,126.755563" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=3a296d50-3ff8-43ec-94b5-ee3d58231aae" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>고양꽃전시관<small>전시관</small></b><span class="mt">차로 약 25분 · 14.9km</span><p>꽃 전시를 보고 온 날, 소도에 묵으며 다음 날 파주의 수목원까지 이어가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%EA%BD%83%EC%A0%84%EC%8B%9C%EA%B4%80,37.655285,126.768908" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=80c6ec6a-cc5a-4d8d-a625-3c544c45ad07" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>최영장군묘<small>고분, 능</small></b><span class="mt">차로 약 26분 · 14.2km</span><p>역사 답사를 마친 뒤, 소도 객실에서 차분히 하루를 정리하세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%B5%9C%EC%98%81%EC%9E%A5%EA%B5%B0%EB%AC%98,37.701332,126.885971" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=63e1ecaf-b76f-4fa9-852d-b44b37996766" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>와글아이<small>체험관광</small></b><span class="mt">차로 약 26분 · 14.6km</span><p>아이가 실컷 뛰어논 날은 온 가족이 시그니처 트윈에서 함께 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%99%80%EA%B8%80%EC%95%84%EC%9D%B4,37.65413,126.775736" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=d0537205-8ae5-41fc-9866-94025f50e696" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>일산호수공원<small>주제공원</small></b><span class="mt">차로 약 26분 · 14.7km</span><p>호수 산책을 마친 저녁, 조용한 소도에서 하루를 정리하세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9D%BC%EC%82%B0%ED%98%B8%EC%88%98%EA%B3%B5%EC%9B%90,37.657058,126.763855" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=02e24733-9e25-4f84-9d19-09c68a7a75f5" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>고양 아람누리<small>공연장</small></b><span class="mt">차로 약 26분 · 14.9km</span><p>공연이 끝난 밤, 여운을 안고 소도로 돌아와 느긋하게 쉬세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%20%EC%95%84%EB%9E%8C%EB%88%84%EB%A6%AC,37.660974,126.772798" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=fac69070-a6b7-458c-9c84-b39d4d002b05" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>고양 서오릉 [유네스코 세계유산]<small>고분, 능</small></b><span class="mt">차로 약 26분 · 25.3km</span><p>서오릉에서 파주 삼릉·장릉까지, 소도에 묵으면 조선 왕릉 여행이 이틀 코스로 이어집니다.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%20%EC%84%9C%EC%98%A4%EB%A6%89%20%5B%EC%9C%A0%EB%84%A4%EC%8A%A4%EC%BD%94%20%EC%84%B8%EA%B3%84%EC%9C%A0%EC%82%B0%5D,37.623555,126.900766" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=8fc00c74-2fc2-4b8e-a5ea-924e6b26fae5" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>장안정사<small>불교</small></b><span class="mt">차로 약 27분 · 16.1km</span><p>추모의 걸음 뒤 먼 길을 바로 돌아가기 어려울 때, 소도에서 조용히 쉬어 가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9E%A5%EC%95%88%EC%A0%95%EC%82%AC,37.660563,126.802294" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=6d40dfb4-8aac-4741-abe2-03f3cbafcc3e" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>원당종마목장 (렛츠런팜 원당)<small>체험목장</small></b><span class="mt">차로 약 27분 · 22.4km</span><p>초원과 흰 울타리 풍경을 담은 뒤, 소도에 묵고 다음 날 파주의 정원까지 이어가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9B%90%EB%8B%B9%EC%A2%85%EB%A7%88%EB%AA%A9%EC%9E%A5%20(%EB%A0%9B%EC%B8%A0%EB%9F%B0%ED%8C%9C%20%EC%9B%90%EB%8B%B9),37.661447,126.868285" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=3ceb6abd-193a-4e34-a94b-21ddb33d3cb3" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>일산호수공원 반려견놀이터<small>주제공원</small></b><span class="mt">차로 약 28분 · 19.3km</span><p>반려견과의 나들이 뒤 숙박을 계획한다면, 반려동물 동반 가능 여부를 소도에 먼저 문의해 주세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9D%BC%EC%82%B0%ED%98%B8%EC%88%98%EA%B3%B5%EC%9B%90%20%EB%B0%98%EB%A0%A4%EA%B2%AC%EB%86%80%EC%9D%B4%ED%84%B0,37.6499,126.7674" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=921e1bbf-7853-4728-a7d4-06330aed754e" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>고양 서삼릉 [유네스코 세계유산]<small>고분, 능</small></b><span class="mt">차로 약 28분 · 22.7km</span><p>왕릉 숲길을 걷고, 소도에서 하루 묵으며 파주 삼릉까지 이어 보세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%20%EC%84%9C%EC%82%BC%EB%A6%89%20%5B%EC%9C%A0%EB%84%A4%EC%8A%A4%EC%BD%94%20%EC%84%B8%EA%B3%84%EC%9C%A0%EC%82%B0%5D,37.663011,126.866961" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=8f1f628e-fd4e-4870-be17-1657fcac065f" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>흥국사(고양)<small>불교</small></b><span class="mt">차로 약 31분 · 26.0km</span><p>고즈넉한 산사를 걸은 뒤, 파주로 넘어와 소도에서 조용한 밤을 이어가세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%9D%A5%EA%B5%AD%EC%82%AC(%EA%B3%A0%EC%96%91),37.663378,126.939759" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=3c6f2deb-ac90-4f26-88d1-25b0e23b19df" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-            <li><b>북한산성<small>성ㆍ산성ㆍ성곽</small></b><span class="mt">차로 약 31분 · 26.2km</span><p>긴 산행 뒤에는 서두르지 말고, 소도의 편백 사우나와 세탁실로 몸과 옷을 정리하세요.</p><span class="ml"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%B6%81%ED%95%9C%EC%82%B0%EC%84%B1,37.65511232,126.94964428" target="_blank" rel="noopener noreferrer">길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9af55839-338e-43a1-9da4-0935b66221bb" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></span></li>
-          </ul>
-        </details>
+          <li class="tp" data-city="고양" data-min="14" data-theme="shop" data-top="0" data-x="146.6" data-y="388.5">
+            <div class="tp-h"><h3>일산가구단지</h3><span class="tp-t">차로 약 14분 · 9.1km</span></div>
+            <p class="tp-m">고양 · 전문상가</p>
+            <p class="tp-w">가구를 둘러보느라 지친 다리, 시몬스 침대가 있는 소도 객실에서 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9D%BC%EC%82%B0%EA%B0%80%EA%B5%AC%EB%8B%A8%EC%A7%80,37.700466,126.758606" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9ad54c6d-2aed-43ec-9a8d-ebc6f3df00d4" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="15" data-theme="nature" data-top="0" data-x="157.1" data-y="337.4">
+            <div class="tp-h"><h3>운정체육공원</h3><span class="tp-t">차로 약 15분 · 6.8km</span></div>
+            <p class="tp-m">파주 · 주제공원</p>
+            <p class="tp-w">경기나 대회로 운정을 찾았다면, 땀에 젖은 옷은 소도 세탁실에서 해결하고 편히 쉬세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9A%B4%EC%A0%95%EC%B2%B4%EC%9C%A1%EA%B3%B5%EC%9B%90,37.73816,126.768341" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=25c1b0c6-01ff-4682-bdf5-e8438a8d1af4" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="15" data-theme="family" data-top="0" data-x="82.1" data-y="273.7">
+            <div class="tp-h"><h3>경기미래교육 파주캠퍼스</h3><span class="tp-t">차로 약 15분 · 8.4km</span></div>
+            <p class="tp-m">파주 · 체험관광</p>
+            <p class="tp-w">이국적인 거리를 산책한 뒤, 소도 커먼즈 카페에서 여행의 여운을 이어가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B2%BD%EA%B8%B0%EB%AF%B8%EB%9E%98%EA%B5%90%EC%9C%A1%20%ED%8C%8C%EC%A3%BC%EC%BA%A0%ED%8D%BC%EC%8A%A4,37.785189,126.698527" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=09ec2be6-1221-48ce-bcc3-a6464344e36b" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="15" data-theme="nature" data-top="0" data-x="134.6" data-y="376.8">
+            <div class="tp-h"><h3>새암공원</h3><span class="tp-t">차로 약 15분 · 8.9km</span></div>
+            <p class="tp-m">파주 · 시민공원</p>
+            <p class="tp-w">운정의 조용한 산책 공원으로, 소도에 묵는 날 아침 산책 코스로 삼기 좋습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%83%88%EC%95%94%EA%B3%B5%EC%9B%90,37.709146,126.747432" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=e42d95fb-3f63-4379-8244-30ac7bf5a994" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="15" data-theme="shop" data-top="0" data-x="143.7" data-y="398.8">
+            <div class="tp-h"><h3>덕이동 로데오거리</h3><span class="tp-t">차로 약 15분 · 10.1km</span></div>
+            <p class="tp-m">고양 · 기타쇼핑시설</p>
+            <p class="tp-w">소도에서 가까운 일산 쇼핑 거리로, 고른 옷은 객실 스타일러에 걸어 두세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%8D%95%EC%9D%B4%EB%8F%99%20%EB%A1%9C%EB%8D%B0%EC%98%A4%EA%B1%B0%EB%A6%AC,37.692898,126.75591" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=675947c0-4dc6-47bc-9e5a-70466f70f657" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="16" data-theme="culture" data-top="0" data-x="77.1" data-y="271.7">
+            <div class="tp-h"><h3>국립민속박물관 파주</h3><span class="tp-t">차로 약 16분 · 9.1km</span></div>
+            <p class="tp-m">파주 · 박물관</p>
+            <p class="tp-w">헤이리와 함께 둘러보면 하루가 모자라니, 소도에 묵고 이틀에 나눠 보세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B5%AD%EB%A6%BD%EB%AF%BC%EC%86%8D%EB%B0%95%EB%AC%BC%EA%B4%80%20%ED%8C%8C%EC%A3%BC,37.786668,126.693915" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=6d3b61c8-5b6d-4533-bd97-50ef92120a95" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="16" data-theme="nature" data-top="0" data-x="128.8" data-y="368.2">
+            <div class="tp-h"><h3>운정건강공원</h3><span class="tp-t">차로 약 16분 · 9.3km</span></div>
+            <p class="tp-m">파주 · 시민공원</p>
+            <p class="tp-w">운정에서 운동 경기를 마친 날, 가까운 소도에서 씻고 푹 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9A%B4%EC%A0%95%EA%B1%B4%EA%B0%95%EA%B3%B5%EC%9B%90,37.715481,126.741986" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=0311ee50-708f-474a-9de7-c236cda8c985" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="16" data-theme="family" data-top="0" data-x="181.5" data-y="388.7">
+            <div class="tp-h"><h3>일산 어린이천문대</h3><span class="tp-t">차로 약 16분 · 9.5km</span></div>
+            <p class="tp-m">고양 · 천문대</p>
+            <p class="tp-w">별을 보고 나온 늦은 밤, 가까운 소도에서 아이와 함께 편히 잠드세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9D%BC%EC%82%B0%20%EC%96%B4%EB%A6%B0%EC%9D%B4%EC%B2%9C%EB%AC%B8%EB%8C%80,37.700352,126.79109" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=3e598a55-f3c7-4a4e-aafe-fdffd6320265" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="17" data-theme="culture" data-top="0" data-x="67.5" data-y="266.7">
+            <div class="tp-h"><h3>프로방스 마을</h3><span class="tp-t">차로 약 17분 · 9.5km</span></div>
+            <p class="tp-m">파주 · 마을관광지</p>
+            <p class="tp-w">야간 조명이 켜질 때까지 머물러도, 돌아갈 숙소가 가까운 소도라면 서두를 일이 없습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%94%84%EB%A1%9C%EB%B0%A9%EC%8A%A4%20%EB%A7%88%EC%9D%84,37.790348,126.684955" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9ebc227a-584a-4df7-aec8-608bc5fea446" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="17" data-theme="history" data-top="0" data-x="138.8" data-y="216.2">
+            <div class="tp-h"><h3>황희선생묘</h3><span class="tp-t">차로 약 17분 · 9.5km</span></div>
+            <p class="tp-m">파주 · 고분, 능</p>
+            <p class="tp-w">조용한 역사 답사 뒤, 소도 객실에서 하루의 기록을 차분히 정리해 보세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%99%A9%ED%9D%AC%EC%84%A0%EC%83%9D%EB%AC%98,37.827655,126.75134" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=d2318272-e125-4992-a54f-bef27e207e1e" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="17" data-theme="culture" data-top="0" data-x="78.5" data-y="266">
+            <div class="tp-h"><h3>한국근현대사박물관</h3><span class="tp-t">차로 약 17분 · 9.5km</span></div>
+            <p class="tp-m">파주 · 박물관</p>
+            <p class="tp-w">추억의 골목을 걷고 나온 저녁, 소도 커먼즈 펍에서 옛이야기를 이어가기 좋습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%95%9C%EA%B5%AD%EA%B7%BC%ED%98%84%EB%8C%80%EC%82%AC%EB%B0%95%EB%AC%BC%EA%B4%80,37.790873,126.695202" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=1db5567f-93f1-4e8e-833b-3cd6d6867053" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="17" data-theme="family" data-top="0" data-x="67.6" data-y="266.6">
+            <div class="tp-h"><h3>쥬라리움 파주점</h3><span class="tp-t">차로 약 17분 · 9.5km</span></div>
+            <p class="tp-m">파주 · 동물원</p>
+            <p class="tp-w">동물 체험으로 들뜬 하루, 넉넉한 킹사이즈 침대가 있는 소도에서 편히 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%A5%AC%EB%9D%BC%EB%A6%AC%EC%9B%80%20%ED%8C%8C%EC%A3%BC%EC%A0%90,37.790421,126.684998" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=2d2a9d0a-42b5-44ea-92e7-0e7f587fe1d8" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="17" data-theme="culture" data-top="0" data-x="80.4" data-y="265.8">
+            <div class="tp-h"><h3>파주공룡박물관</h3><span class="tp-t">차로 약 17분 · 9.7km</span></div>
+            <p class="tp-m">파주 · 박물관</p>
+            <p class="tp-w">아이의 공룡 이야기가 밤까지 이어질 테니, 온 가족이 함께 묵는 시그니처 트윈을 추천합니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%EA%B3%B5%EB%A3%A1%EB%B0%95%EB%AC%BC%EA%B4%80,37.791001,126.696951" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=49b32100-1dd4-4cd3-aa4a-1f8396c40317" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="17" data-theme="family" data-top="0" data-x="109.5" data-y="250.5">
+            <div class="tp-h"><h3>모산목장</h3><span class="tp-t">차로 약 17분 · 9.7km</span></div>
+            <p class="tp-m">파주 · 체험목장</p>
+            <p class="tp-w">아이와 낙농 체험을 한 날은 소도에서 하루 묵고, 다음 날 헤이리까지 이어가 보세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%AA%A8%EC%82%B0%EB%AA%A9%EC%9E%A5,37.802291,126.724012" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9d8d41cf-f3d3-4981-b6ce-d09425873955" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="17" data-theme="nature" data-top="0" data-x="168.2" data-y="400.3">
+            <div class="tp-h"><h3>중산체육공원</h3><span class="tp-t">차로 약 17분 · 10.0km</span></div>
+            <p class="tp-m">고양 · 주제공원</p>
+            <p class="tp-w">경기를 뛰고 난 뒤, 소도 세탁실과 편백 사우나 객실로 옷과 몸을 함께 정리하세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%A4%91%EC%82%B0%EC%B2%B4%EC%9C%A1%EA%B3%B5%EC%9B%90,37.6918,126.7787" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=5b1796c9-accf-48c2-b2dd-c715f926d57b" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="17" data-theme="shop" data-top="0" data-x="77" data-y="365">
+            <div class="tp-h"><h3>롯데프리미엄아울렛 파주점</h3><span class="tp-t">차로 약 17분 · 10.6km</span></div>
+            <p class="tp-m">파주 · 아웃렛</p>
+            <p class="tp-w">두 손 가득한 쇼핑백은 객실에 풀어놓고, 다음 날 12시 체크아웃까지 천천히 정리하세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%A1%AF%EB%8D%B0%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%EC%95%84%EC%9A%B8%EB%A0%9B%20%ED%8C%8C%EC%A3%BC%EC%A0%90,37.717819,126.693762" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=e164b7f1-9c06-4b17-84f5-5a24623b2ec2" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="17" data-theme="spa" data-top="0" data-x="88.3" data-y="377">
+            <div class="tp-h"><h3>네이처스파</h3><span class="tp-t">차로 약 17분 · 10.9km</span></div>
+            <p class="tp-m">파주 · 찜질방</p>
+            <p class="tp-w">스파로 몸을 푼 날은 멀리 운전하지 말고, 가까운 소도의 킹사이즈 침대에서 그대로 잠드세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%84%A4%EC%9D%B4%EC%B2%98%EC%8A%A4%ED%8C%8C,37.708936,126.704325" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=2415e5aa-0412-4c47-a1f9-f29475c9ca4a" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="17" data-theme="culture" data-top="0" data-x="71.7" data-y="366.8">
+            <div class="tp-h"><h3>미메시스 아트 뮤지엄</h3><span class="tp-t">차로 약 17분 · 10.9km</span></div>
+            <p class="tp-m">파주 · 미술관·화랑</p>
+            <p class="tp-w">건축과 전시를 천천히 음미한 날, 단정한 소도 객실이 그 여백을 이어 줍니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%AF%B8%EB%A9%94%EC%8B%9C%EC%8A%A4%20%EC%95%84%ED%8A%B8%20%EB%AE%A4%EC%A7%80%EC%97%84,37.716516,126.688875" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=73a2ac61-d666-4007-9ee8-3e5913e80b78" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="17" data-theme="nature" data-top="0" data-x="135.9" data-y="409">
+            <div class="tp-h"><h3>고양 피크닉시민공원</h3><span class="tp-t">차로 약 17분 · 11.1km</span></div>
+            <p class="tp-m">고양 · 시민공원</p>
+            <p class="tp-w">피크닉으로 보낸 오후 뒤, 소도 커먼즈 카페에서 하루를 마무리하세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%20%ED%94%BC%ED%81%AC%EB%8B%89%EC%8B%9C%EB%AF%BC%EA%B3%B5%EC%9B%90,37.685361,126.748622" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=8fd0344a-c6ca-49bf-8cae-307440a0f405" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="17" data-theme="family" data-top="0" data-x="250.5" data-y="402.5">
+            <div class="tp-h"><h3>쥬쥬랜드</h3><span class="tp-t">차로 약 17분 · 15.3km</span></div>
+            <p class="tp-m">고양 · 테마파크</p>
+            <p class="tp-w">동물과 놀이를 즐긴 뒤, 아이와 함께 넉넉한 침대에서 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%A5%AC%EC%A5%AC%EB%9E%9C%EB%93%9C,37.690133,126.855304" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=56488ba6-2e8e-4b35-bd40-4c25c45583d2" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="18" data-theme="culture" data-top="1" data-x="82.9" data-y="269.8">
+            <div class="tp-h"><h3>헤이리 예술마을</h3><span class="tp-t">차로 약 18분 · 9.2km</span></div>
+            <p class="tp-m"><span class="pop">인기</span>파주 · 마을관광지</p>
+            <p class="tp-d">갤러리와 박물관, 책방과 카페가 모여 있는 예술인 마을입니다.</p>
+            <p class="tp-w">전시는 헤이리에서 보고 저녁의 한 잔은 소도 커먼즈 카페 &amp; 펍에서, 하루로는 아쉬운 마을을 이틀에 나눠 즐길 수 있습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%97%A4%EC%9D%B4%EB%A6%AC%EC%98%88%EC%88%A0%EB%A7%88%EC%9D%84,37.78804091,126.6993044" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=82d9a397-b8c5-454e-bb71-dff610fb9bb9" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="18" data-theme="peace" data-top="0" data-x="73.2" data-y="277.9">
+            <div class="tp-h"><h3>통일동산 관광특구</h3><span class="tp-t">차로 약 18분 · 9.2km</span></div>
+            <p class="tp-m">파주 · 관광단지</p>
+            <p class="tp-w">오두산 전망대와 헤이리를 품은 관광특구라, 소도를 거점으로 하루 종일 머물기 좋습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%86%B5%EC%9D%BC%EB%8F%99%EC%82%B0%20%EA%B4%80%EA%B4%91%ED%8A%B9%EA%B5%AC,37.782096,126.690206" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=5296a4e8-81ed-4138-abdd-bbcab0344042" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="18" data-theme="shop" data-top="1" data-x="79.7" data-y="295">
+            <div class="tp-h"><h3>신세계사이먼 파주 프리미엄 아울렛</h3><span class="tp-t">차로 약 18분 · 9.5km</span></div>
+            <p class="tp-m"><span class="pop">인기</span>파주 · 아웃렛</p>
+            <p class="tp-d">헤이리와 이웃한 야외 거리형 프리미엄 아울렛입니다.</p>
+            <p class="tp-w">쇼핑백은 객실에 내려두고 새 옷은 스타일러에 걸어둔 채, 체크아웃 12시까지 느긋하게 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%EC%95%84%EC%9A%B8%EB%A0%9B,37.76947081,126.69633445" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=511013c1-1308-4cdc-88af-85a5e2bb5da8" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="18" data-theme="culture" data-top="0" data-x="121.8" data-y="206.6">
+            <div class="tp-h"><h3>자유로자동차극장</h3><span class="tp-t">차로 약 18분 · 10.5km</span></div>
+            <p class="tp-m">파주 · 영화관</p>
+            <p class="tp-w">늦은 밤 영화가 끝나도 소도가 가까우니, 심야 장거리 운전 대신 그대로 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9E%90%EC%9C%A0%EB%A1%9C%EC%9E%90%EB%8F%99%EC%B0%A8%EA%B7%B9%EC%9E%A5,37.834723,126.735478" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=d467e128-8da8-4ebb-a7ae-b832a7c97655" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="18" data-theme="nature" data-top="0" data-x="121" data-y="245.7">
+            <div class="tp-h"><h3>소울원</h3><span class="tp-t">차로 약 18분 · 10.7km</span></div>
+            <p class="tp-m">파주 · 수목원ㆍ정원</p>
+            <p class="tp-w">꽃과 나무 사이에서 쉰 하루를, 소도의 조용한 객실에서 온전히 이어가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%86%8C%EC%9A%B8%EC%9B%90,37.805861,126.734727" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=50015373-6384-4880-8fb0-d3bae9313906" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="18" data-theme="nature" data-top="0" data-x="71" data-y="362.6">
+            <div class="tp-h"><h3>파주출판단지근린공원</h3><span class="tp-t">차로 약 18분 · 11.2km</span></div>
+            <p class="tp-m">파주 · 근린공원</p>
+            <p class="tp-w">출판도시 산책의 쉼표 같은 공원으로, 소도에 묵으면 책의 도시를 이틀에 걸쳐 볼 수 있습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%EC%B6%9C%ED%8C%90%EB%8B%A8%EC%A7%80%EA%B7%BC%EB%A6%B0%EA%B3%B5%EC%9B%90,37.7196,126.6882" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=313d0e66-c43b-48fb-9656-9f69e8133eda" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="18" data-theme="peace" data-top="0" data-x="184.1" data-y="184.1">
+            <div class="tp-h"><h3>통일공원(파주)</h3><span class="tp-t">차로 약 18분 · 12.3km</span></div>
+            <p class="tp-m">파주 · 안보관광시설</p>
+            <p class="tp-w">통일로변에 있는 공원으로, 소도에서 임진각으로 가는 길에 잠시 들르기 좋습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%86%B5%EC%9D%BC%EA%B3%B5%EC%9B%90(%ED%8C%8C%EC%A3%BC),37.851317,126.793431" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=5b8cfe60-3c7f-4cc5-b01a-4f85505ce813" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="19" data-theme="shop" data-top="0" data-x="159.8" data-y="408.6">
+            <div class="tp-h"><h3>일산시장</h3><span class="tp-t">차로 약 19분 · 11.5km</span></div>
+            <p class="tp-m">고양 · 비상설시장</p>
+            <p class="tp-w">장터 구경을 마치고, 한적한 금촌의 소도에서 하루를 마무리하세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9D%BC%EC%82%B0%EC%8B%9C%EC%9E%A5,37.685625,126.770826" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=ea35d6f5-e00d-4b61-ae82-66dca572ae2c" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="19" data-theme="nature" data-top="0" data-x="234" data-y="455.6">
+            <div class="tp-h"><h3>성라공원</h3><span class="tp-t">차로 약 19분 · 20.6km</span></div>
+            <p class="tp-m">고양 · 시민공원</p>
+            <p class="tp-w">숲 산책으로 쉬어 간 하루를 소도의 조용한 객실에서 이어가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%84%B1%EB%9D%BC%EA%B3%B5%EC%9B%90,37.651,126.8399" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=f5e599ed-51dc-4775-bf7b-d071a7bc1b3f" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="20" data-theme="family" data-top="0" data-x="98.3" data-y="381.7">
+            <div class="tp-h"><h3>우농타조농장</h3><span class="tp-t">차로 약 20분 · 11.2km</span></div>
+            <p class="tp-m">파주 · 기타산업관광지</p>
+            <p class="tp-w">농장 체험 뒤 흙 묻은 옷은 소도 세탁실에서 해결하고, 가족이 함께 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9A%B0%EB%86%8D%ED%83%80%EC%A1%B0%EB%86%8D%EC%9E%A5,37.705466,126.713565" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=4aefba87-4593-4703-93ca-78f121bebb9f" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="20" data-theme="peace" data-top="1" data-x="59.2" data-y="289.8">
+            <div class="tp-h"><h3>오두산 통일전망대</h3><span class="tp-t">차로 약 20분 · 11.3km</span></div>
+            <p class="tp-m"><span class="pop">인기</span>파주 · 전망대</p>
+            <p class="tp-d">한강과 임진강이 만나는 자리에서 강 건너 북녘을 바라보는 전망대입니다.</p>
+            <p class="tp-w">전망대의 강바람을 맞고 내려와 20분이면, 따뜻한 객실과 킹사이즈 침대가 기다립니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%98%A4%EB%91%90%EC%82%B0%ED%86%B5%EC%9D%BC%EC%A0%84%EB%A7%9D%EB%8C%80,37.77327614,126.67722749" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=3e569bf5-729f-4e82-9191-5e016f346cb2" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="20" data-theme="shop" data-top="0" data-x="174.7" data-y="176.5">
+            <div class="tp-h"><h3>문산자유시장</h3><span class="tp-t">차로 약 20분 · 11.6km</span></div>
+            <p class="tp-m">파주 · 상설시장</p>
+            <p class="tp-w">시장 먹거리로 배를 채운 뒤에는 소도 커먼즈 카페에서 커피 한 잔으로 마무리하세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%AC%B8%EC%82%B0%EC%9E%90%EC%9C%A0%EC%8B%9C%EC%9E%A5,37.856931,126.784753" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=322071c4-ca4e-4d99-b9c5-3ea996a2c55d" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="20" data-theme="culture" data-top="0" data-x="69.4" data-y="377.9">
+            <div class="tp-h"><h3>파주 출판도시</h3><span class="tp-t">차로 약 20분 · 12.0km</span></div>
+            <p class="tp-m">파주 · 기타산업관광지</p>
+            <p class="tp-w">책방과 북카페에서 고른 책 한 권, 조용한 소도 객실에서 밤새 읽기 좋습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%20%EC%B6%9C%ED%8C%90%EB%8F%84%EC%8B%9C,37.708288,126.686665" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=fa366c70-25f4-4374-8a39-38bade391fb2" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="20" data-theme="culture" data-top="0" data-x="67.2" data-y="377">
+            <div class="tp-h"><h3>열화당책박물관</h3><span class="tp-t">차로 약 20분 · 12.0km</span></div>
+            <p class="tp-m">파주 · 박물관</p>
+            <p class="tp-w">책의 시간을 걷고 온 날, 소도 객실의 라운지 체어에서 그 여운을 조용히 이어가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%97%B4%ED%99%94%EB%8B%B9%EC%B1%85%EB%B0%95%EB%AC%BC%EA%B4%80,37.708967,126.684675" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=8af82bd4-8698-450f-8fa7-b51d9a578c52" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="20" data-theme="nature" data-top="0" data-x="143.2" data-y="413.7">
+            <div class="tp-h"><h3>성저공원</h3><span class="tp-t">차로 약 20분 · 12.1km</span></div>
+            <p class="tp-m">고양 · 근린공원</p>
+            <p class="tp-w">언덕 숲길을 가볍게 걷고, 소도에서 느긋한 저녁을 맞이하세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%84%B1%EC%A0%80%EA%B3%B5%EC%9B%90,37.681904,126.75539" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=45414445-96ea-4320-95a7-a603a658ff8b" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="20" data-theme="nature" data-top="0" data-x="117.3" data-y="408.8">
+            <div class="tp-h"><h3>선인장다육식물연구소</h3><span class="tp-t">차로 약 20분 · 12.9km</span></div>
+            <p class="tp-m">고양 · 수목원ㆍ정원</p>
+            <p class="tp-w">선인장과 다육식물을 둘러본 뒤, 소도에서 하루 묵고 파주의 정원 여행으로 이어가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%84%A0%EC%9D%B8%EC%9E%A5%EB%8B%A4%EC%9C%A1%EC%8B%9D%EB%AC%BC%EC%97%B0%EA%B5%AC%EC%86%8C,37.685492,126.731337" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=730c7810-1ece-4b25-b8f4-c5adf73e831a" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="20" data-theme="history" data-top="0" data-x="261" data-y="316.3">
+            <div class="tp-h"><h3>용암사(파주)</h3><span class="tp-t">차로 약 20분 · 13.0km</span></div>
+            <p class="tp-m">파주 · 불교</p>
+            <p class="tp-w">산사를 둘러본 고요한 마음을, 도심 속 작은 섬 소도에서 흐트러짐 없이 이어가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9A%A9%EC%95%94%EC%82%AC(%ED%8C%8C%EC%A3%BC),37.753733,126.865076" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=27b19280-8df6-49e2-a2a1-5a169f0ef678" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="20" data-theme="nature" data-top="1" data-x="270.9" data-y="252.6">
+            <div class="tp-h"><h3>벽초지수목원</h3><span class="tp-t">차로 약 20분 · 14.3km</span></div>
+            <p class="tp-m"><span class="pop">인기</span>파주 · 수목원ㆍ정원</p>
+            <p class="tp-d">동양과 서양의 정원을 한곳에 가꾼 수목원으로, 계절마다 다른 풍경을 보여줍니다.</p>
+            <p class="tp-w">소도에서 아침을 들고 20분이면 닿아, 사람이 몰리기 전 한적한 오전의 정원을 먼저 걸을 수 있습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%B2%BD%EC%B4%88%EC%A7%80%EC%88%98%EB%AA%A9%EC%9B%90,37.80077004,126.87425849" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9ffcf9ff-1b25-4abd-8268-6f3a0dc4c296" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="20" data-theme="peace" data-top="0" data-x="269.4" data-y="404.9">
+            <div class="tp-h"><h3>필리핀군 참전기념비</h3><span class="tp-t">차로 약 20분 · 16.6km</span></div>
+            <p class="tp-m">고양 · 안보유적지</p>
+            <p class="tp-w">참전의 역사를 돌아본 뒤, 소도를 거점으로 임진각까지 평화 여행을 이어가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%95%84%EB%A6%AC%ED%95%80%EA%B5%B0%20%EC%B0%B8%EC%A0%84%EA%B8%B0%EB%85%90%EB%B9%84,37.6884,126.8729" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=a9d5f5ec-517f-4ba7-9dc7-2276ac72633b" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="21" data-theme="nature" data-top="0" data-x="131.1" data-y="410.9">
+            <div class="tp-h"><h3>고양생태공원</h3><span class="tp-t">차로 약 21분 · 11.8km</span></div>
+            <p class="tp-m">고양 · 생태관광지</p>
+            <p class="tp-w">생태 탐방으로 차분해진 하루를 소도의 조용한 객실에서 이어가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%EC%83%9D%ED%83%9C%EA%B3%B5%EC%9B%90,37.683948,126.744128" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=e3e094ef-25b4-43a6-ac8b-86aed659f046" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="21" data-theme="shop" data-top="0" data-x="231.1" data-y="448.4">
+            <div class="tp-h"><h3>원당시장</h3><span class="tp-t">차로 약 21분 · 19.9km</span></div>
+            <p class="tp-m">고양 · 상설시장</p>
+            <p class="tp-w">전통시장의 인심을 맛보고, 저녁은 소도에서 조용히 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9B%90%EB%8B%B9%EC%8B%9C%EC%9E%A5,37.656281,126.837253" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=0457cdd7-6fd2-4510-8135-692e984cc960" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="21" data-theme="history" data-top="0" data-x="184.4" data-y="458.4">
+            <div class="tp-h"><h3>정혜사</h3><span class="tp-t">차로 약 21분 · 22.5km</span></div>
+            <p class="tp-m">고양 · 불교</p>
+            <p class="tp-w">도심 사찰에서 마음을 고른 뒤, 소도에서 고요한 밤을 이어가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%A0%95%ED%98%9C%EC%82%AC,37.648911,126.793745" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=a7aa7688-7fec-457f-9ad5-614937c5b91f" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="22" data-theme="nature" data-top="0" data-x="174.5" data-y="410.8">
+            <div class="tp-h"><h3>안곡습지공원</h3><span class="tp-t">차로 약 22분 · 12.1km</span></div>
+            <p class="tp-m">고양 · 생태습지</p>
+            <p class="tp-w">습지 산책으로 느려진 걸음 그대로, 소도에서 여유로운 저녁을 보내세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%95%88%EA%B3%A1%EC%8A%B5%EC%A7%80%EA%B3%B5%EC%9B%90,37.684023,126.784494" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=e82721f1-e781-47ba-b6a7-06ebdda4db3a" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="22" data-theme="family" data-top="0" data-x="75.5" data-y="240">
+            <div class="tp-h"><h3>파주팜랜드</h3><span class="tp-t">차로 약 22분 · 12.2km</span></div>
+            <p class="tp-m">파주 · 체험관광</p>
+            <p class="tp-w">목장 풍경 속에서 하루를 보낸 뒤, 씻고 눕기 편한 소도 객실로 돌아오세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%ED%8C%9C%EB%9E%9C%EB%93%9C,37.810037,126.692379" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=e6ad49b4-5b40-45e5-a0e3-252598bae66b" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="22" data-theme="culture" data-top="0" data-x="134.9" data-y="434.9">
+            <div class="tp-h"><h3>현대 모터스튜디오 고양</h3><span class="tp-t">차로 약 22분 · 13.2km</span></div>
+            <p class="tp-m">고양 · 전시관</p>
+            <p class="tp-w">자동차 전시를 본 다음 날은, 소도에서 출발해 파주 드라이브로 이어가 보세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%98%84%EB%8C%80%20%EB%AA%A8%ED%84%B0%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%20%EA%B3%A0%EC%96%91,37.666206,126.747683" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=f8643c1e-4e8e-4791-8945-91ffb9188260" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="22" data-theme="culture" data-top="0" data-x="132.6" data-y="431.2">
+            <div class="tp-h"><h3>킨텍스</h3><span class="tp-t">차로 약 22분 · 13.4km</span></div>
+            <p class="tp-m">고양 · 컨벤션센터</p>
+            <p class="tp-w">전시·박람회 일정이라면 행사장 주변의 혼잡을 피해, 무료 주차가 되는 소도에 묵어 보세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%82%A8%ED%85%8D%EC%8A%A4,37.668936,126.745564" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=11661754-7237-40c8-a771-ea6ef50e30db" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="22" data-theme="spa" data-top="0" data-x="298.3" data-y="188.5">
+            <div class="tp-h"><h3>원더클럽 파주CC</h3><span class="tp-t">차로 약 22분 · 19.2km</span></div>
+            <p class="tp-m">파주 · 골프</p>
+            <p class="tp-w">라운딩 뒤 뭉친 몸은 편백나무 건식 사우나 객실에서 풀고 하루 더 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9B%90%EB%8D%94%ED%81%B4%EB%9F%BD%20%ED%8C%8C%EC%A3%BCCC,37.848081,126.899765" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=ef2e81b9-4dd0-47d7-b2df-b86cc00ee115" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="22" data-theme="nature" data-top="0" data-x="219.8" data-y="490.9">
+            <div class="tp-h"><h3>지도공원</h3><span class="tp-t">차로 약 22분 · 24.5km</span></div>
+            <p class="tp-m">고양 · 근린공원</p>
+            <p class="tp-w">가벼운 산책과 운동을 마치고, 소도에서 편안히 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%A7%80%EB%8F%84%EA%B3%B5%EC%9B%90,37.624944,126.826722" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=edf5b013-8936-4de7-a660-6693e9aad4e9" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="23" data-theme="nature" data-top="0" data-x="124.4" data-y="427.5">
+            <div class="tp-h"><h3>대화동레포츠공원</h3><span class="tp-t">차로 약 23분 · 14.1km</span></div>
+            <p class="tp-m">고양 · 시민공원</p>
+            <p class="tp-w">운동으로 땀 흘린 날, 편백 사우나 객실에서 개운하게 마무리하세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%8C%80%ED%99%94%EB%8F%99%EB%A0%88%ED%8F%AC%EC%B8%A0%EA%B3%B5%EC%9B%90,37.671666,126.737873" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=389281f0-b81f-4945-90b1-5b456361c95e" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="23" data-theme="history" data-top="0" data-x="197" data-y="134.8">
+            <div class="tp-h"><h3>화석정</h3><span class="tp-t">차로 약 23분 · 16.0km</span></div>
+            <p class="tp-m">파주 · 기타역사유적지</p>
+            <p class="tp-w">임진강을 내려다보는 정자에서 느긋이 머물고, 저녁은 소도에서 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%99%94%EC%84%9D%EC%A0%95,37.887648,126.80546" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=0c77c813-8255-4265-8964-666fdf83f03a" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="23" data-theme="nature" data-top="0" data-x="273.3" data-y="421.7">
+            <div class="tp-h"><h3>신원체육공원</h3><span class="tp-t">차로 약 23분 · 19.3km</span></div>
+            <p class="tp-m">고양 · 근린공원</p>
+            <p class="tp-w">경기 일정이 있는 날, 무료 주차와 세탁실이 있는 소도를 숙소로 삼아 보세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%8B%A0%EC%9B%90%EC%B2%B4%EC%9C%A1%EA%B3%B5%EC%9B%90,37.675987,126.876485" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=274a6458-c676-431c-ae34-b7627e0099e0" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="23" data-theme="culture" data-top="0" data-x="228.3" data-y="459.1">
+            <div class="tp-h"><h3>고양 어울림누리</h3><span class="tp-t">차로 약 23분 · 20.7km</span></div>
+            <p class="tp-m">고양 · 공연장</p>
+            <p class="tp-w">공연이나 경기를 본 저녁, 소도에서 여유롭게 하루를 닫으세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%20%EC%96%B4%EC%9A%B8%EB%A6%BC%EB%88%84%EB%A6%AC,37.648414,126.834618" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=b5f3efd7-db1d-423d-9372-3dd825998ed9" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="23" data-theme="culture" data-top="0" data-x="224.3" data-y="484.8">
+            <div class="tp-h"><h3>고양어린이박물관</h3><span class="tp-t">차로 약 23분 · 24.5km</span></div>
+            <p class="tp-m">고양 · 박물관</p>
+            <p class="tp-w">아이와 체험을 마친 날, 온 가족이 함께 묵는 시그니처 트윈에서 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%EC%96%B4%EB%A6%B0%EC%9D%B4%EB%B0%95%EB%AC%BC%EA%B4%80,37.62942,126.830912" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=24993f58-d65a-4720-8250-c86da836c194" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="23" data-theme="history" data-top="0" data-x="219.5" data-y="530">
+            <div class="tp-h"><h3>행주산성</h3><span class="tp-t">차로 약 23분 · 26.4km</span></div>
+            <p class="tp-m">고양 · 성ㆍ산성ㆍ성곽</p>
+            <p class="tp-w">한강을 내려다본 뒤 북쪽으로 올라오면, 파주 여행의 거점 소도에 닿습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%96%89%EC%A3%BC%EC%82%B0%EC%84%B1,37.596066,126.826455" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=2f3031f7-c0b1-4688-9fb1-c2488d701616" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="23" data-theme="nature" data-top="0" data-x="217.3" data-y="504.7">
+            <div class="tp-h"><h3>충장근린체육공원</h3><span class="tp-t">차로 약 23분 · 26.5km</span></div>
+            <p class="tp-m">고양 · 주제공원</p>
+            <p class="tp-w">운동 경기를 마친 뒤, 소도 세탁실과 넉넉한 침대로 다음 날을 준비하세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%B6%A9%EC%9E%A5%EA%B7%BC%EB%A6%B0%EC%B2%B4%EC%9C%A1%EA%B3%B5%EC%9B%90,37.6147,126.8244" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=26eaa872-ab38-4241-a65f-8551ec5091c3" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="24" data-theme="nature" data-top="0" data-x="168" data-y="439.3">
+            <div class="tp-h"><h3>정발산공원</h3><span class="tp-t">차로 약 24분 · 13.5km</span></div>
+            <p class="tp-m">고양 · 근린공원</p>
+            <p class="tp-w">숲길 산책으로 가볍게 몸을 풀고, 소도에서 편안한 밤을 보내세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%A0%95%EB%B0%9C%EC%82%B0%EA%B3%B5%EC%9B%90,37.663,126.7785" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=28a62c7e-ab93-4b38-810e-e4c0f263b2bb" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="24" data-theme="spa" data-top="0" data-x="142.3" data-y="437.2">
+            <div class="tp-h"><h3>원마운트 워터파크</h3><span class="tp-t">차로 약 24분 · 13.8km</span></div>
+            <p class="tp-m">고양 · 온천·사우나·스파</p>
+            <p class="tp-w">물놀이로 젖은 옷은 소도 세탁실에서 말리고, 가족이 함께 푹 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9B%90%EB%A7%88%EC%9A%B4%ED%8A%B8%20%EC%9B%8C%ED%84%B0%ED%8C%8C%ED%81%AC,37.664553,126.754527" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=acb48e6a-9aad-4cf8-a9c7-5820c774e8ef" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="24" data-theme="shop" data-top="0" data-x="179.8" data-y="427.7">
+            <div class="tp-h"><h3>풍동 애니골</h3><span class="tp-t">차로 약 24분 · 14.3km</span></div>
+            <p class="tp-m">고양 · 골목길, 문화거리</p>
+            <p class="tp-w">애니골에서 저녁을 든든히 먹은 뒤, 소도에서 느긋한 밤을 보내세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%92%8D%EB%8F%99%20%EC%95%A0%EB%8B%88%EA%B3%A8,37.671567,126.789426" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=5c0de66a-adbb-44fd-bff2-53b3a142ef0d" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="24" data-theme="history" data-top="0" data-x="140.3" data-y="161.7">
+            <div class="tp-h"><h3>황희선생유적지·반구정</h3><span class="tp-t">차로 약 24분 · 16.6km</span></div>
+            <p class="tp-m">파주 · 기타역사유적지</p>
+            <p class="tp-w">임진강가 정자의 풍경을 느긋하게 즐기고, 해가 진 뒤에는 소도로 돌아와 쉬세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%99%A9%ED%9D%AC%EC%84%A0%EC%83%9D%EC%9C%A0%EC%A0%81%EC%A7%80%C2%B7%EB%B0%98%EA%B5%AC%EC%A0%95,37.867865,126.752704" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=2818a2e3-5192-4d45-b744-e58d3a98ab5d" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="24" data-theme="nature" data-top="0" data-x="215.7" data-y="120.4">
+            <div class="tp-h"><h3>율곡수목원</h3><span class="tp-t">차로 약 24분 · 18.1km</span></div>
+            <p class="tp-m">파주 · 수목원ㆍ정원</p>
+            <p class="tp-w">숲길을 오래 걸은 날에는 편백 사우나 객실에서 다리의 피로를 풀어보세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9C%A8%EA%B3%A1%EC%88%98%EB%AA%A9%EC%9B%90,37.898311,126.822863" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=a13192fb-d288-4229-86c1-149e731c191c" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="24" data-theme="shop" data-top="0" data-x="292.9" data-y="461">
+            <div class="tp-h"><h3>스타필드 고양</h3><span class="tp-t">차로 약 24분 · 21.9km</span></div>
+            <p class="tp-m">고양 · 복합쇼핑몰</p>
+            <p class="tp-w">종일 쇼핑한 날, 새 옷은 객실 스타일러에 걸어 두고 편히 쉬세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%8A%A4%ED%83%80%ED%95%84%EB%93%9C%20%EA%B3%A0%EC%96%91,37.646977,126.894778" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=048220a0-be4c-4ee0-aec4-eb1e323b3c50" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="24" data-theme="spa" data-top="0" data-x="292.9" data-y="461">
+            <div class="tp-h"><h3>아쿠아필드 고양</h3><span class="tp-t">차로 약 24분 · 21.9km</span></div>
+            <p class="tp-m">고양 · 워터파크</p>
+            <p class="tp-w">물놀이와 찜질 뒤 나른한 몸, 소도의 킹사이즈 침대에 그대로 맡기세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%95%84%EC%BF%A0%EC%95%84%ED%95%84%EB%93%9C%20%EA%B3%A0%EC%96%91,37.646977,126.894778" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=1c67c2df-2245-4425-91fc-83de82395a33" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="24" data-theme="spa" data-top="0" data-x="292.9" data-y="461">
+            <div class="tp-h"><h3>스몹 고양</h3><span class="tp-t">차로 약 24분 · 21.9km</span></div>
+            <p class="tp-m">고양 · 스포츠센터, 수련시설</p>
+            <p class="tp-w">실내 스포츠로 몸을 실컷 쓴 날, 편백 사우나 객실에서 근육을 풀어 주세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%8A%A4%EB%AA%B9%20%EA%B3%A0%EC%96%91,37.646977,126.894778" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=4ab8f306-bdc7-4130-8988-5fc5298c7346" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="24" data-theme="culture" data-top="0" data-x="211.8" data-y="496.6">
+            <div class="tp-h"><h3>토당문화플랫폼</h3><span class="tp-t">차로 약 24분 · 24.6km</span></div>
+            <p class="tp-m">고양 · 기타문화시설</p>
+            <p class="tp-w">전시와 문화 프로그램을 즐긴 뒤, 소도에서 조용한 저녁을 보내세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%86%A0%EB%8B%B9%EB%AC%B8%ED%99%94%ED%94%8C%EB%9E%AB%ED%8F%BC,37.62074,126.819276" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=f283a955-4ac8-4a7e-81d4-5b95ea60ba20" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="25" data-theme="family" data-top="0" data-x="143.4" data-y="438.3">
+            <div class="tp-h"><h3>아쿠아플라넷 일산</h3><span class="tp-t">차로 약 25분 · 14.3km</span></div>
+            <p class="tp-m">고양 · 수족관·아쿠라리움</p>
+            <p class="tp-w">아쿠아리움에서 하루를 보낸 뒤, 붐비는 일산을 벗어나 조용한 소도에서 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%95%84%EC%BF%A0%EC%95%84%ED%94%8C%EB%9D%BC%EB%84%B7%20%EC%9D%BC%EC%82%B0,37.663764,126.755563" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=3a296d50-3ff8-43ec-94b5-ee3d58231aae" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="25" data-theme="culture" data-top="0" data-x="157.7" data-y="449.7">
+            <div class="tp-h"><h3>고양꽃전시관</h3><span class="tp-t">차로 약 25분 · 14.9km</span></div>
+            <p class="tp-m">고양 · 전시관</p>
+            <p class="tp-w">꽃 전시를 보고 온 날, 소도에 묵으며 다음 날 파주의 수목원까지 이어가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%EA%BD%83%EC%A0%84%EC%8B%9C%EA%B4%80,37.655285,126.768908" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=80c6ec6a-cc5a-4d8d-a625-3c544c45ad07" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="26" data-theme="history" data-top="0" data-x="283.5" data-y="387.3">
+            <div class="tp-h"><h3>최영장군묘</h3><span class="tp-t">차로 약 26분 · 14.2km</span></div>
+            <p class="tp-m">고양 · 고분, 능</p>
+            <p class="tp-w">역사 답사를 마친 뒤, 소도 객실에서 차분히 하루를 정리하세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%B5%9C%EC%98%81%EC%9E%A5%EA%B5%B0%EB%AC%98,37.701332,126.885971" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=63e1ecaf-b76f-4fa9-852d-b44b37996766" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="26" data-theme="family" data-top="0" data-x="165" data-y="451.3">
+            <div class="tp-h"><h3>와글아이</h3><span class="tp-t">차로 약 26분 · 14.6km</span></div>
+            <p class="tp-m">고양 · 체험관광</p>
+            <p class="tp-w">아이가 실컷 뛰어논 날은 온 가족이 시그니처 트윈에서 함께 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%99%80%EA%B8%80%EC%95%84%EC%9D%B4,37.65413,126.775736" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=d0537205-8ae5-41fc-9866-94025f50e696" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="26" data-theme="nature" data-top="0" data-x="152.3" data-y="447.3">
+            <div class="tp-h"><h3>일산호수공원</h3><span class="tp-t">차로 약 26분 · 14.7km</span></div>
+            <p class="tp-m">고양 · 주제공원</p>
+            <p class="tp-w">호수 산책을 마친 저녁, 조용한 소도에서 하루를 정리하세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9D%BC%EC%82%B0%ED%98%B8%EC%88%98%EA%B3%B5%EC%9B%90,37.657058,126.763855" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=02e24733-9e25-4f84-9d19-09c68a7a75f5" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="26" data-theme="culture" data-top="0" data-x="161.9" data-y="442">
+            <div class="tp-h"><h3>고양 아람누리</h3><span class="tp-t">차로 약 26분 · 14.9km</span></div>
+            <p class="tp-m">고양 · 공연장</p>
+            <p class="tp-w">공연이 끝난 밤, 여운을 안고 소도로 돌아와 느긋하게 쉬세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%20%EC%95%84%EB%9E%8C%EB%88%84%EB%A6%AC,37.660974,126.772798" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=fac69070-a6b7-458c-9c84-b39d4d002b05" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="26" data-theme="spa" data-top="0" data-x="293" data-y="231.2">
+            <div class="tp-h"><h3>서원밸리 컨트리클럽</h3><span class="tp-t">차로 약 26분 · 15.6km</span></div>
+            <p class="tp-m">파주 · 골프</p>
+            <p class="tp-w">이른 티오프 전날 소도에 묵으면 새벽 운전이 짧아지고, 무료 주차라 골프백을 실은 차도 편합니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%84%9C%EC%9B%90%EB%B0%B8%EB%A6%AC%20%EC%BB%A8%ED%8A%B8%EB%A6%AC%ED%81%B4%EB%9F%BD,37.816523,126.894783" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=7cc2e8c9-6aa9-4ff5-ab1a-6f4826c74e51" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="26" data-theme="history" data-top="0" data-x="299.4" data-y="492.7">
+            <div class="tp-h"><h3>고양 서오릉 [유네스코 세계유산]</h3><span class="tp-t">차로 약 26분 · 25.3km</span></div>
+            <p class="tp-m">고양 · 고분, 능</p>
+            <p class="tp-w">서오릉에서 파주 삼릉·장릉까지, 소도에 묵으면 조선 왕릉 여행이 이틀 코스로 이어집니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%20%EC%84%9C%EC%98%A4%EB%A6%89%20%5B%EC%9C%A0%EB%84%A4%EC%8A%A4%EC%BD%94%20%EC%84%B8%EA%B3%84%EC%9C%A0%EC%82%B0%5D,37.623555,126.900766" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=8fc00c74-2fc2-4b8e-a5ea-924e6b26fae5" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="27" data-theme="nature" data-top="0" data-x="304.7" data-y="244">
+            <div class="tp-h"><h3>발랑저수지</h3><span class="tp-t">차로 약 27분 · 15.8km</span></div>
+            <p class="tp-m">파주 · 저수지</p>
+            <p class="tp-w">새벽 풍경이 가장 아름다운 곳이라, 전날 소도에 묵어야 그 시간에 닿을 수 있습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%B0%9C%EB%9E%91%EC%A0%80%EC%88%98%EC%A7%80,37.807133,126.905744" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=52d0af4c-5826-4333-8a5e-7c1fb86ba7df" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="27" data-theme="history" data-top="0" data-x="193.6" data-y="442.6">
+            <div class="tp-h"><h3>장안정사</h3><span class="tp-t">차로 약 27분 · 16.1km</span></div>
+            <p class="tp-m">고양 · 불교</p>
+            <p class="tp-w">추모의 걸음 뒤 먼 길을 바로 돌아가기 어려울 때, 소도에서 조용히 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9E%A5%EC%95%88%EC%A0%95%EC%82%AC,37.660563,126.802294" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=6d40dfb4-8aac-4741-abe2-03f3cbafcc3e" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="27" data-theme="nature" data-top="1" data-x="328.7" data-y="286.3">
+            <div class="tp-h"><h3>마장호수 출렁다리</h3><span class="tp-t">차로 약 27분 · 17.2km</span></div>
+            <p class="tp-m"><span class="pop">인기</span>파주 · 출렁다리</p>
+            <p class="tp-d">호수 위를 가로지르는 출렁다리와 물가 둘레길을 함께 걷는 곳입니다.</p>
+            <p class="tp-w">둘레길 한 바퀴로 묵직해진 다리는 소도의 편백나무 건식 사우나 객실에서 풀어보세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%A7%88%EC%9E%A5%ED%98%B8%EC%88%98%EC%B6%9C%EB%A0%81%EB%8B%A4%EB%A6%AC,37.77590357,126.92803556" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=63b86613-d1ba-461b-94a6-aee5b863fc60" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="27" data-theme="history" data-top="0" data-x="267.4" data-y="164">
+            <div class="tp-h"><h3>자운서원</h3><span class="tp-t">차로 약 27분 · 19.8km</span></div>
+            <p class="tp-m">파주 · 사당</p>
+            <p class="tp-w">율곡의 자취를 따라 걷는 역사 여행, 소도를 거점으로 화석정까지 하루에 묶을 수 있습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9E%90%EC%9A%B4%EC%84%9C%EC%9B%90,37.866133,126.870984" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=53b6d99b-35eb-411f-b052-487ea64db8a7" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="27" data-theme="nature" data-top="0" data-x="205.7" data-y="132.4">
+            <div class="tp-h"><h3>파주 율곡습지공원</h3><span class="tp-t">차로 약 27분 · 20.9km</span></div>
+            <p class="tp-m">파주 · 생태습지</p>
+            <p class="tp-w">꽃이 피는 계절엔 이른 아침이 가장 한적하니, 소도에서 자고 먼저 도착해 보세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%20%EC%9C%A8%EA%B3%A1%EC%8A%B5%EC%A7%80%EA%B3%B5%EC%9B%90,37.889488,126.813559" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=95194069-1fc5-46b4-84b1-d450655893ce" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="27" data-theme="family" data-top="0" data-x="264.5" data-y="441.4">
+            <div class="tp-h"><h3>원당종마목장 (렛츠런팜 원당)</h3><span class="tp-t">차로 약 27분 · 22.4km</span></div>
+            <p class="tp-m">고양 · 체험목장</p>
+            <p class="tp-w">초원과 흰 울타리 풍경을 담은 뒤, 소도에 묵고 다음 날 파주의 정원까지 이어가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9B%90%EB%8B%B9%EC%A2%85%EB%A7%88%EB%AA%A9%EC%9E%A5%20(%EB%A0%9B%EC%B8%A0%EB%9F%B0%ED%8C%9C%20%EC%9B%90%EB%8B%B9),37.661447,126.868285" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=3ceb6abd-193a-4e34-a94b-21ddb33d3cb3" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="28" data-theme="history" data-top="1" data-x="320.1" data-y="317.4">
+            <div class="tp-h"><h3>보광사</h3><span class="tp-t">차로 약 28분 · 17.3km</span></div>
+            <p class="tp-m"><span class="pop">인기</span>파주 · 불교</p>
+            <p class="tp-d">고령산 자락에 자리한 오랜 산사로, 숲길과 옛 전각이 고요합니다.</p>
+            <p class="tp-w">산사의 고요를 '도심 속 작은 섬' 소도에서 그대로 이어, 마장호수와 묶은 동쪽 하루 코스를 조용히 마무리하세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%B3%B4%EA%B4%91%EC%82%AC,37.75295081,126.92001026" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=ff83cca2-5364-4fab-92d1-eb787abe7874" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="28" data-theme="peace" data-top="0" data-x="126.4" data-y="130.9">
+            <div class="tp-h"><h3>DMZ 생생누리</h3><span class="tp-t">차로 약 28분 · 18.0km</span></div>
+            <p class="tp-m">파주 · 안보관광시설</p>
+            <p class="tp-w">임진각 일대를 하루에 다 보려면 이른 출발이 답이라, 전날 소도 숙박이 일정을 넉넉하게 만듭니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/DMZ%20%EC%83%9D%EC%83%9D%EB%88%84%EB%A6%AC,37.89053,126.73972" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=2c00408c-6333-426a-b227-e29737f7133d" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="28" data-theme="peace" data-top="0" data-x="127" data-y="129.7">
+            <div class="tp-h"><h3>캠프 그리브스</h3><span class="tp-t">임진각까지 약 28분 · 18.0km</span></div>
+            <p class="tp-m">파주 · 안보관광시설</p>
+            <p class="tp-w">민통선 안쪽이라 임진각에서 출발하는 일정에 맞춰야 하니, 전날 소도에 묵고 여유 있게 나서세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%EC%9E%84%EC%A7%84%EA%B0%81%ED%8F%89%ED%99%94%EA%B3%A4%EB%8F%8C%EB%9D%BC,37.89145,126.740277" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=747ab116-9f25-4a1b-975a-4db70b0cafe9" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="28" data-theme="family" data-top="0" data-x="128.7" data-y="131.2">
+            <div class="tp-h"><h3>평화랜드</h3><span class="tp-t">차로 약 28분 · 18.0km</span></div>
+            <p class="tp-m">파주 · 테마파크</p>
+            <p class="tp-w">밤 야경까지 즐긴 뒤에는 멀리 가지 말고, 소도에서 하루를 마무리하세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8F%89%ED%99%94%EB%9E%9C%EB%93%9C,37.890375,126.741938" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=e8fb19cb-ea7d-492f-9184-c5ae902e16e1" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="28" data-theme="peace" data-top="0" data-x="127" data-y="129.7">
+            <div class="tp-h"><h3>제3땅굴</h3><span class="tp-t">임진각까지 약 28분 · 18.0km</span></div>
+            <p class="tp-m">파주 · 안보유적지</p>
+            <p class="tp-w">민통선 안쪽이라 임진각에서 출발하는 DMZ 관광을 이용해야 하니, 전날 소도 숙박이 가장 확실한 준비입니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%EC%9E%84%EC%A7%84%EA%B0%81%ED%8F%89%ED%99%94%EA%B3%A4%EB%8F%8C%EB%9D%BC,37.89145,126.740277" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=77bfaf47-b988-44ef-af51-9f9ba02e3932" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="28" data-theme="nature" data-top="0" data-x="156.1" data-y="457">
+            <div class="tp-h"><h3>일산호수공원 반려견놀이터</h3><span class="tp-t">차로 약 28분 · 19.3km</span></div>
+            <p class="tp-m">고양 · 주제공원</p>
+            <p class="tp-w">반려견과의 나들이 뒤 숙박을 계획한다면, 반려동물 동반 가능 여부를 소도에 먼저 문의해 주세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9D%BC%EC%82%B0%ED%98%B8%EC%88%98%EA%B3%B5%EC%9B%90%20%EB%B0%98%EB%A0%A4%EA%B2%AC%EB%86%80%EC%9D%B4%ED%84%B0,37.6499,126.7674" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=921e1bbf-7853-4728-a7d4-06330aed754e" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="28" data-theme="history" data-top="0" data-x="263.1" data-y="439.3">
+            <div class="tp-h"><h3>고양 서삼릉 [유네스코 세계유산]</h3><span class="tp-t">차로 약 28분 · 22.7km</span></div>
+            <p class="tp-m">고양 · 고분, 능</p>
+            <p class="tp-w">왕릉 숲길을 걷고, 소도에서 하루 묵으며 파주 삼릉까지 이어 보세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B3%A0%EC%96%91%20%EC%84%9C%EC%82%BC%EB%A6%89%20%5B%EC%9C%A0%EB%84%A4%EC%8A%A4%EC%BD%94%20%EC%84%B8%EA%B3%84%EC%9C%A0%EC%82%B0%5D,37.663011,126.866961" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=8f1f628e-fd4e-4870-be17-1657fcac065f" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="29" data-theme="nature" data-top="0" data-x="330.9" data-y="287.2">
+            <div class="tp-h"><h3>마장호수</h3><span class="tp-t">차로 약 29분 · 17.6km</span></div>
+            <p class="tp-m">파주 · 호수</p>
+            <p class="tp-w">호수 물빛과 낙조를 끝까지 보고도 숙소 걱정이 없도록, 소도를 돌아올 자리로 정해 두세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%A7%88%EC%9E%A5%ED%98%B8%EC%88%98,37.7752,126.9301" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=f0d1ff25-0f58-4a6c-b6ae-c5dcd1ee975b" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="29" data-theme="peace" data-top="1" data-x="127" data-y="129.7">
+            <div class="tp-h"><h3>파주임진각평화곤돌라</h3><span class="tp-t">차로 약 29분 · 17.9km</span></div>
+            <p class="tp-m"><span class="pop">인기</span>파주 · 체험관광</p>
+            <p class="tp-d">임진강 위를 건너 민간인통제선 안쪽까지 다녀오는 곤돌라입니다.</p>
+            <p class="tp-w">전날 소도에 묵으면 탑승장까지 29분이라, 줄이 길어지기 전 이른 시간에 탑승하기 좋습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%EC%9E%84%EC%A7%84%EA%B0%81%ED%8F%89%ED%99%94%EA%B3%A4%EB%8F%8C%EB%9D%BC,37.89145681,126.74028509" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=32e53c71-aa79-4943-9ca6-b0a1d93acb45" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="29" data-theme="peace" data-top="1" data-x="130.9" data-y="128.6">
+            <div class="tp-h"><h3>파주 임진각 (평화누리공원)</h3><span class="tp-t">차로 약 29분 · 18.0km</span></div>
+            <p class="tp-m"><span class="pop">인기</span>파주 · 안보관광시설</p>
+            <p class="tp-d">넓은 잔디 언덕과 바람개비, 자유의 다리가 있는 평화 관광의 출발점입니다.</p>
+            <p class="tp-w">소도를 거점으로 두면 임진각과 곤돌라를 반나절에 돌아보고, 오후에는 헤이리까지 이어갈 수 있습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9E%84%EC%A7%84%EA%B0%81%20%ED%8F%89%ED%99%94%EB%88%84%EB%A6%AC%EA%B3%B5%EC%9B%90,37.89227563,126.74392019" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=197e6e5e-b111-4561-9edc-2579205d9151" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="29" data-theme="spa" data-top="0" data-x="252.1" data-y="184.2">
+            <div class="tp-h"><h3>파주가야랜드</h3><span class="tp-t">차로 약 29분 · 19.1km</span></div>
+            <p class="tp-m">파주 · 온천·사우나·스파</p>
+            <p class="tp-w">온천으로 데운 몸 그대로, 가까운 소도의 포근한 침대에서 하루를 마무리하세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%EA%B0%80%EC%95%BC%EB%9E%9C%EB%93%9C,37.851252,126.856729" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=3f01461f-9aab-486e-94b2-2bf8a411b687" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="30" data-theme="family" data-top="0" data-x="266.2" data-y="142.2">
+            <div class="tp-h"><h3>쇠꼴마을</h3><span class="tp-t">차로 약 30분 · 22.9km</span></div>
+            <p class="tp-m">파주 · 체험마을</p>
+            <p class="tp-w">아이와 체험을 마친 뒤, 침대가 넉넉한 시그니처 트윈에서 가족이 함께 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%87%A0%EA%BC%B4%EB%A7%88%EC%9D%84,37.882224,126.869883" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=7a757ccc-1ca0-406c-9be6-316e13b56c42" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="31" data-theme="history" data-top="0" data-x="341.3" data-y="438.8">
+            <div class="tp-h"><h3>흥국사(고양)</h3><span class="tp-t">차로 약 31분 · 26.0km</span></div>
+            <p class="tp-m">고양 · 불교</p>
+            <p class="tp-w">고즈넉한 산사를 걸은 뒤, 파주로 넘어와 소도에서 조용한 밤을 이어가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%9D%A5%EA%B5%AD%EC%82%AC(%EA%B3%A0%EC%96%91),37.663378,126.939759" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=3c6f2deb-ac90-4f26-88d1-25b0e23b19df" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="고양" data-min="31" data-theme="history" data-top="0" data-x="351.9" data-y="450">
+            <div class="tp-h"><h3>북한산성</h3><span class="tp-t">차로 약 31분 · 26.2km</span></div>
+            <p class="tp-m">고양 · 성ㆍ산성ㆍ성곽</p>
+            <p class="tp-w">긴 산행 뒤에는 서두르지 말고, 소도의 편백 사우나와 세탁실로 몸과 옷을 정리하세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%B6%81%ED%95%9C%EC%82%B0%EC%84%B1,37.65511232,126.94964428" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9af55839-338e-43a1-9da4-0935b66221bb" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="32" data-theme="nature" data-top="0" data-x="263.1" data-y="74.7">
+            <div class="tp-h"><h3>파평체육공원</h3><span class="tp-t">차로 약 32분 · 24.4km</span></div>
+            <p class="tp-m">파주 · 근린공원</p>
+            <p class="tp-w">경기 일정으로 파평을 찾는 팀이라면, 세탁실과 무료 주차가 있는 소도가 편한 숙소가 됩니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%ED%8F%89%EC%B2%B4%EC%9C%A1%EA%B3%B5%EC%9B%90,37.932017,126.867036" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=d2db4083-51c3-4094-88d2-8a214bf312c2" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="37" data-theme="family" data-top="0" data-x="287.5" data-y="30">
+            <div class="tp-h"><h3>임진강 황포돛배</h3><span class="tp-t">차로 약 37분 · 30.2km</span></div>
+            <p class="tp-m">파주 · 유람선·잠수함관광</p>
+            <p class="tp-w">임진강 뱃길은 파주 북쪽 끝이라, 소도에 하루 묵으며 다녀오면 당일치기보다 한결 여유롭습니다.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9E%84%EC%A7%84%EA%B0%95%20%ED%99%A9%ED%8F%AC%EB%8F%9B%EB%B0%B0,37.965016,126.889686" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=6745bba3-af7b-496b-8d38-a944f9c7b17d" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="40" data-theme="shop" data-top="0" data-x="316.1" data-y="40.7">
+            <div class="tp-h"><h3>임진강 한우마을</h3><span class="tp-t">차로 약 40분 · 29.8km</span></div>
+            <p class="tp-m">파주 · 마을관광지</p>
+            <p class="tp-w">한우로 든든히 먹은 저녁, 먼 귀갓길 대신 소도에서 편안한 밤을 보내세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9E%84%EC%A7%84%EA%B0%95%20%ED%95%9C%EC%9A%B0%EB%A7%88%EC%9D%84,37.957106,126.91632" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=0364b342-dba4-4aec-b4b9-1b6317f4dc7c" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="43" data-theme="nature" data-top="1" data-x="346.3" data-y="68.7">
+            <div class="tp-h"><h3>감악산 출렁다리</h3><span class="tp-t">차로 약 43분 · 38.6km</span></div>
+            <p class="tp-m"><span class="pop">인기</span>파주 · 출렁다리</p>
+            <p class="tp-d">감악산 산허리에 걸린 출렁다리로, 계곡과 능선을 잇는 산행의 들머리입니다.</p>
+            <p class="tp-w">열 곳 중 가장 먼 여정이니, 산행 뒤 먼 길을 바로 돌아가는 대신 소도의 편백 사우나 객실에서 하루 쉬어 가세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B0%90%EC%95%85%EC%82%B0%EC%B6%9C%EB%A0%81%EB%8B%A4%EB%A6%AC,37.93642596,126.94444206" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=de772d8a-a59a-4a1f-bb74-f914fb541bd2" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="tp" data-city="파주" data-min="47" data-theme="family" data-top="0" data-x="360.8" data-y="36.5">
+            <div class="tp-h"><h3>산머루농원</h3><span class="tp-t">차로 약 47분 · 37.3km</span></div>
+            <p class="tp-m">파주 · 기타산업관광지</p>
+            <p class="tp-w">머루 와인은 사 들고 와서, 운전을 마친 뒤 소도 객실에서 느긋하게 즐기세요.</p>
+            <p class="tp-l"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%82%B0%EB%A8%B8%EB%A3%A8%EB%86%8D%EC%9B%90,37.960245,126.957923" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=bbc92890-9e96-4f2f-b208-f1e06d2be1a6" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          </ol>
+          <p class="t-empty" hidden>조건에 맞는 여행지가 없습니다. 필터를 줄여 보세요.</p>
+          <button class="t-more btn btn-line" type="button" hidden>더 보기</button>
+        </div>
       </div>
       <dl class="facts">
         <div><dt>가장 가까운 여행지</dt><dd>차로 9분</dd></div>
@@ -1139,5 +1599,71 @@ a.call:hover { background: var(--ink); color: var(--paper); }
 })();
 </script>
 
+<script>
+(function () {
+  var root = document.getElementById("travel"); if (!root) return;
+  var list = root.querySelector(".tlist"), items = [].slice.call(list.children), svg = root.querySelector(".tmap svg");
+  var pts = svg.querySelector(".pts"), tip = svg.querySelector(".tip"), home = svg.querySelector(".home");
+  var count = root.querySelector(".t-count"), more = root.querySelector(".t-more"), empty = root.querySelector(".t-empty");
+  var NS = "http://www.w3.org/2000/svg", st = { city: "", min: "", theme: "" }, STEP = 10, limit = STEP, shown = [], active = null;
+  var hx = +home.getAttribute("cx"), hy = +home.getAttribute("cy");
+  items.forEach(function (li) {
+    var c = document.createElementNS(NS, "circle"), d = li.dataset;
+    c.setAttribute("cx", d.x); c.setAttribute("cy", d.y); c.setAttribute("r", d.top === "1" ? 5.5 : 3.8);
+    c.setAttribute("class", "pt" + (d.top === "1" ? " top" : ""));
+    var t = document.createElementNS(NS, "title"); t.textContent = li.querySelector("h3").textContent + " · " + li.querySelector(".tp-t").textContent; c.appendChild(t);
+    c.addEventListener("click", function () { select(li, true); });
+    (d.top === "1" ? pts.appendChild(c) : pts.insertBefore(c, pts.firstChild)); li._pt = c;
+    li.addEventListener("mouseenter", function () { select(li, false); });
+    li.addEventListener("focusin", function () { select(li, false); });
+  });
+  function match(li) {
+    var d = li.dataset;
+    if (st.city && d.city !== st.city) return false;
+    if (st.min && +d.min > +st.min) return false;
+    if (st.theme === "top") return d.top === "1";
+    if (st.theme && d.theme !== st.theme) return false;
+    return true;
+  }
+  function select(li, scroll) {
+    if (active) active.classList.remove("on");
+    active = li;
+    if (!li) { tip.setAttribute("hidden", ""); return; }
+    li.classList.add("on");
+    var x = +li.dataset.x, y = +li.dataset.y, ln = tip.querySelector("line"), ci = tip.querySelector("circle"), tx = tip.querySelector("text");
+    ln.setAttribute("x1", hx); ln.setAttribute("y1", hy); ln.setAttribute("x2", x); ln.setAttribute("y2", y);
+    ci.setAttribute("cx", x); ci.setAttribute("cy", y);
+    tx.textContent = li.querySelector("h3").textContent + " · " + li.querySelector(".tp-t").textContent.replace(/^.*약 /, "약 ").replace(/ · .*/, "");
+    var right = x > 250, left = x < 170;
+    tx.setAttribute("text-anchor", right ? "end" : left ? "start" : "middle");
+    tx.setAttribute("x", right ? x - 12 : left ? x + 12 : x); tx.setAttribute("y", right || left ? y + 4 : y - 14);
+    tip.removeAttribute("hidden");
+    if (scroll) {
+      var i = shown.indexOf(li);
+      if (i >= limit) { limit = Math.ceil((i + 1) / STEP) * STEP; apply(true); }
+      li.scrollIntoView({ block: "center" });
+    }
+  }
+  function apply(keep) {
+    shown = items.filter(match);
+    items.forEach(function (li) { li.hidden = true; li._pt.classList.toggle("off", shown.indexOf(li) < 0); });
+    shown.slice(0, limit).forEach(function (li) { li.hidden = false; });
+    count.textContent = (shown.length === items.length ? "" : items.length + "곳 중 ") + shown.length + "곳 · 가까운 순";
+    var rest = shown.length - limit;
+    more.hidden = rest <= 0; more.textContent = "더 보기 (" + Math.max(rest, 0) + "곳 남음)";
+    empty.hidden = shown.length > 0;
+    if (!keep && active && shown.indexOf(active) < 0) select(null);
+  }
+  root.querySelectorAll(".tf button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      st[b.dataset.f] = b.dataset.v; limit = STEP;
+      [].forEach.call(b.parentNode.querySelectorAll("button"), function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      apply();
+    });
+  });
+  more.addEventListener("click", function () { limit += STEP; apply(true); });
+  apply();
+})();
+</script>
 </body>
 </html>
