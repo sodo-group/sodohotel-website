@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>소도호텔 앤 커먼즈 | 파주 금촌역 호텔 공식 홈페이지</title>
-<meta name="description" content="파주 금촌역 도보 4분, 소도호텔 앤 커먼즈 공식 홈페이지. 객실 내 편백 사우나, 킹사이즈 시몬스 침대, 무료 주차·Wi-Fi, 조식과 카페·레스토랑·루프탑까지. 출장·여행·데이트 숙소로 편안하게.">
+<meta name="description" content="파주 금촌역 도보 4분, 소도호텔 앤 커먼즈 공식 홈페이지. 객실 내 편백 사우나, 킹사이즈 시몬스 침대, 무료 주차·Wi-Fi, 조식과 카페·레스토랑·루프탑까지. 출장·여행·데이트 숙소로 편안하게. 헤이리·파주 프리미엄 아울렛·임진각·마장호수 등 파주 여행지가 차로 30분 이내.">
 <meta name="keywords" content="금촌역 호텔, 금촌 호텔, 금촌 숙소, 금촌 모텔, 파주 금촌 호텔, 금촌동 호텔, 금촌역 숙소, 금촌역 모텔, 금촌역 인근 숙소, 금촌 출장 숙소, 파주 출장 호텔, 금촌 비즈니스 호텔, 파주 비즈니스 호텔, 파주 디스플레이단지 숙소, 파주 산업단지 숙소, 금촌 감성 숙소, 금촌 프라이빗 숙소, 금촌 사우나 호텔, 파주 사우나 숙소, 금촌 무한대실, 파주 데이트 숙소, 파주 여행 숙소, 파주 호텔 추천, 금촌 호텔 추천, 파주 호캉스, 파주 가족여행, 파주 커플 숙소, 모텔 추천, 숙소 추천, 1박 추천">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://sodohotel.com/">
@@ -349,6 +349,35 @@ section { padding-block: clamp(80px, 11vw, 150px); }
 .commons small { display: block; margin-top: 20px; font-size: 12.5px; color: rgba(238, 240, 234, .65); }
 @media (max-width: 820px) { .commons-grid { grid-template-columns: 1fr 1fr; } .co.wide { grid-column: span 2; } }
 
+/* travel */
+.travel { background: var(--paper-2); }
+.travel-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(32px, 5vw, 72px); align-items: start; }
+.tmap { margin: 0; position: sticky; top: 96px; min-width: 0; }
+.tmap svg { display: block; width: 100%; height: auto; }
+.tmap .ring { fill: none; stroke: var(--rule); stroke-dasharray: 3 5; }
+.tmap .axis { stroke: var(--rule); }
+.tmap .ring-t { font: 9px var(--latin); letter-spacing: .14em; fill: var(--muted); }
+.tmap .line { stroke: var(--sage); stroke-opacity: .35; }
+.tmap .dot { fill: var(--paper); stroke: var(--sage); }
+.tmap .num { font: 600 11px var(--body); fill: var(--ink); text-anchor: middle; }
+.tmap .home { fill: var(--sage); }
+.tmap .home-t { font: 10px var(--latin); letter-spacing: .18em; fill: var(--sage); text-anchor: middle; }
+.spots { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); min-width: 0; }
+.spot { display: grid; grid-template-columns: 30px 1fr auto; gap: 8px 14px; padding: 24px 0; border-bottom: 1px solid var(--rule); }
+.spot .no { font-family: var(--latin); font-size: 11px; letter-spacing: .1em; color: var(--sage); padding-top: 9px; }
+.spot h3 { font-size: clamp(19px, 2vw, 23px); }
+.spot .dir { display: block; font-family: var(--body); font-size: 12.5px; letter-spacing: 0; color: var(--muted); margin-top: 4px; }
+.spot .dist { text-align: right; white-space: nowrap; font-family: var(--display); font-size: clamp(19px, 2vw, 23px); line-height: 1.35; font-variant-numeric: tabular-nums; }
+.spot .dist small { display: block; font-family: var(--body); font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+.spot p { grid-column: 2 / -1; margin: 0; }
+.spot .desc { font-size: 14.5px; color: var(--muted); }
+.spot .why { padding-left: 14px; border-left: 2px solid var(--oak); font-size: 15px; font-weight: 500; }
+.spot .go { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: var(--muted); }
+.spot .go a:hover { color: var(--ink); }
+.travel-note { margin: 28px 0 0; font-size: 13px; color: var(--muted); }
+.travel .facts { margin-top: clamp(40px, 6vw, 72px); }
+@media (max-width: 900px) { .travel-grid { grid-template-columns: 1fr; } .tmap { position: static; max-width: 460px; } }
+
 /* location */
 .loc-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(32px, 6vw, 88px); align-items: start; }
 .address { font-family: var(--display); font-size: clamp(24px, 3vw, 36px); line-height: 1.4; margin: 0 0 24px; }
@@ -549,6 +578,7 @@ a.call:hover { background: var(--ink); color: var(--paper); }
       <a href="#about">호텔소개</a>
       <a href="#rooms">객실소개</a>
       <a href="#facilities">부대시설</a>
+      <a href="#travel">주변 여행</a>
       <a href="#location">오시는 길</a>
       <a href="#faq">자주 묻는 질문</a>
       <a class="cta" href="https://naver.me/GDQCZr4M" target="_blank" rel="noopener noreferrer">네이버플레이스 바로가기</a>
@@ -709,6 +739,118 @@ a.call:hover { background: var(--ink); color: var(--paper); }
         <div><dt>RESERVATION</dt><dd><strong>전날 사전 신청</strong>프론트 데스크에서 접수</dd></div>
       </dl>
       <small>한식 중심 식사에 스프·샐러드·모닝빵을 함께 준비합니다. 식수 인원에 따라 당일 신청은 어려울 수 있습니다. 메뉴와 요금은 현장 안내를 확인해 주세요.</small>
+    </div>
+  </section>
+
+  <section class="travel" id="travel" aria-labelledby="travel-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="label">Around Sodo</p>
+        <h2 id="travel-title">파주 여행의 한가운데,<br>소도에서 떠나세요</h2>
+        <p class="lede">소도호텔은 파주의 중심 금촌에 있습니다. 서쪽의 헤이리와 아울렛, 동쪽의 수목원과 호수, 북쪽의 임진각까지 파주 가볼 만한 곳 열 곳 가운데 아홉 곳이 차로 30분 안쪽입니다. 짐은 소도에 두고 가볍게 다녀오세요.</p>
+      </div>
+      <div class="travel-grid">
+        <figure class="tmap">
+          <svg viewBox="0 0 440 420" role="img" aria-label="소도호텔을 중심으로 본 파주 여행지 열 곳의 방향과 거리. 서쪽에 헤이리·아울렛·오두산, 동쪽에 벽초지수목원·마장호수·보광사, 북쪽에 임진각과 곤돌라, 남쪽에 운정호수공원, 북동쪽에 감악산이 있습니다.">
+            <line class="axis" x1="165" y1="8" x2="165" y2="412"/><line class="axis" x1="8" y1="300" x2="432" y2="300"/>
+            <circle class="ring" cx="165" cy="300" r="145"/><circle class="ring" cx="165" cy="300" r="290"/>
+            <text class="ring-t" x="171" y="150">10KM</text><text class="ring-t" x="171" y="24">20KM</text>
+            <line class="line" x1="165" y1="300" x2="132" y2="372"/><line class="line" x1="165" y1="300" x2="68" y2="262"/><line class="line" x1="165" y1="300" x2="64" y2="292"/><line class="line" x1="165" y1="300" x2="40" y2="286"/><line class="line" x1="165" y1="300" x2="291" y2="242"/><line class="line" x1="165" y1="300" x2="360" y2="282"/><line class="line" x1="165" y1="300" x2="350" y2="319"/><line class="line" x1="165" y1="300" x2="111" y2="96"/><line class="line" x1="165" y1="300" x2="138" y2="94"/><line class="line" x1="165" y1="300" x2="381" y2="23"/>
+            <circle class="dot" cx="132" cy="372" r="11"/><text class="num" x="132" y="376">1</text><circle class="dot" cx="68" cy="262" r="11"/><text class="num" x="68" y="266">2</text><circle class="dot" cx="64" cy="292" r="11"/><text class="num" x="64" y="296">3</text><circle class="dot" cx="40" cy="286" r="11"/><text class="num" x="40" y="290">4</text><circle class="dot" cx="291" cy="242" r="11"/><text class="num" x="291" y="246">5</text><circle class="dot" cx="360" cy="282" r="11"/><text class="num" x="360" y="286">6</text><circle class="dot" cx="350" cy="319" r="11"/><text class="num" x="350" y="323">7</text><circle class="dot" cx="111" cy="96" r="11"/><text class="num" x="111" y="100">8</text><circle class="dot" cx="138" cy="94" r="11"/><text class="num" x="138" y="98">9</text><circle class="dot" cx="381" cy="23" r="11"/><text class="num" x="381" y="27">10</text>
+            <circle class="home" cx="165" cy="300" r="7"/><text class="home-t" x="165" y="324">SODO</text>
+          </svg>
+          <figcaption class="cap">소도호텔 기준 방향과 직선거리. 번호는 오른쪽 목록과 같습니다.</figcaption>
+        </figure>
+        <ol class="spots">
+          <li class="spot">
+            <span class="no" aria-hidden="true">01</span>
+            <h3>운정호수공원<span class="dir">소도호텔에서 남쪽</span></h3>
+            <div class="dist">차로 약 14분<small>8.8km</small></div>
+            <p class="desc">운정신도시 한가운데 펼쳐진 호수공원으로, 물가를 따라 걷는 산책로와 저녁 풍경이 좋습니다.</p>
+            <p class="why">소도에서 가장 가까운 여행지라, 체크인 뒤 저녁 산책만 다녀와도 파주에서의 첫날이 채워집니다.</p>
+            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9A%B4%EC%A0%95%ED%98%B8%EC%88%98%EA%B3%B5%EC%9B%90,37.71987144,126.74948275" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/detail_view.do?coid=b9c20ef9-cb31-45ab-8bb6-5e047c788fa8" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="spot">
+            <span class="no" aria-hidden="true">02</span>
+            <h3>헤이리 예술마을<span class="dir">소도호텔에서 서쪽</span></h3>
+            <div class="dist">차로 약 18분<small>9.2km</small></div>
+            <p class="desc">갤러리와 박물관, 책방과 카페가 모여 있는 예술인 마을입니다.</p>
+            <p class="why">전시는 헤이리에서 보고 저녁의 한 잔은 소도 커먼즈 카페 &amp; 펍에서, 하루로는 아쉬운 마을을 이틀에 나눠 즐길 수 있습니다.</p>
+            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%97%A4%EC%9D%B4%EB%A6%AC%EC%98%88%EC%88%A0%EB%A7%88%EC%9D%84,37.78804091,126.6993044" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/detail_view.do?coid=82d9a397-b8c5-454e-bb71-dff610fb9bb9" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="spot">
+            <span class="no" aria-hidden="true">03</span>
+            <h3>신세계사이먼 파주 프리미엄 아울렛<span class="dir">소도호텔에서 서쪽</span></h3>
+            <div class="dist">차로 약 18분<small>9.5km</small></div>
+            <p class="desc">헤이리와 이웃한 야외 거리형 프리미엄 아울렛입니다.</p>
+            <p class="why">쇼핑백은 객실에 내려두고 새 옷은 스타일러에 걸어둔 채, 체크아웃 12시까지 느긋하게 쉬어 가세요.</p>
+            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%EC%95%84%EC%9A%B8%EB%A0%9B,37.76947081,126.69633445" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/detail_view.do?coid=511013c1-1308-4cdc-88af-85a5e2bb5da8" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="spot">
+            <span class="no" aria-hidden="true">04</span>
+            <h3>오두산 통일전망대<span class="dir">소도호텔에서 서쪽</span></h3>
+            <div class="dist">차로 약 20분<small>11.3km</small></div>
+            <p class="desc">한강과 임진강이 만나는 자리에서 강 건너 북녘을 바라보는 전망대입니다.</p>
+            <p class="why">전망대의 강바람을 맞고 내려와 20분이면, 따뜻한 객실과 킹사이즈 침대가 기다립니다.</p>
+            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%98%A4%EB%91%90%EC%82%B0%ED%86%B5%EC%9D%BC%EC%A0%84%EB%A7%9D%EB%8C%80,37.77327614,126.67722749" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/detail_view.do?coid=3e569bf5-729f-4e82-9191-5e016f346cb2" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="spot">
+            <span class="no" aria-hidden="true">05</span>
+            <h3>벽초지수목원<span class="dir">소도호텔에서 동쪽</span></h3>
+            <div class="dist">차로 약 20분<small>14.3km</small></div>
+            <p class="desc">동양과 서양의 정원을 한곳에 가꾼 수목원으로, 계절마다 다른 풍경을 보여줍니다.</p>
+            <p class="why">소도에서 아침을 들고 20분이면 닿아, 사람이 몰리기 전 한적한 오전의 정원을 먼저 걸을 수 있습니다.</p>
+            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%B2%BD%EC%B4%88%EC%A7%80%EC%88%98%EB%AA%A9%EC%9B%90,37.80077004,126.87425849" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/detail_view.do?coid=9ffcf9ff-1b25-4abd-8268-6f3a0dc4c296" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="spot">
+            <span class="no" aria-hidden="true">06</span>
+            <h3>마장호수 출렁다리<span class="dir">소도호텔에서 동쪽</span></h3>
+            <div class="dist">차로 약 27분<small>17.2km</small></div>
+            <p class="desc">호수 위를 가로지르는 출렁다리와 물가 둘레길을 함께 걷는 곳입니다.</p>
+            <p class="why">둘레길 한 바퀴로 묵직해진 다리는 소도의 편백나무 건식 사우나 객실에서 풀어보세요.</p>
+            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%A7%88%EC%9E%A5%ED%98%B8%EC%88%98%EC%B6%9C%EB%A0%81%EB%8B%A4%EB%A6%AC,37.77590357,126.92803556" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/detail_view.do?coid=63b86613-d1ba-461b-94a6-aee5b863fc60" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="spot">
+            <span class="no" aria-hidden="true">07</span>
+            <h3>보광사<span class="dir">소도호텔에서 동쪽</span></h3>
+            <div class="dist">차로 약 28분<small>17.3km</small></div>
+            <p class="desc">고령산 자락에 자리한 오랜 산사로, 숲길과 옛 전각이 고요합니다.</p>
+            <p class="why">산사의 고요를 '도심 속 작은 섬' 소도에서 그대로 이어, 마장호수와 묶은 동쪽 하루 코스를 조용히 마무리하세요.</p>
+            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EB%B3%B4%EA%B4%91%EC%82%AC,37.75295081,126.92001026" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/detail_view.do?coid=ff83cca2-5364-4fab-92d1-eb787abe7874" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="spot">
+            <span class="no" aria-hidden="true">08</span>
+            <h3>파주임진각평화곤돌라<span class="dir">소도호텔에서 북쪽</span></h3>
+            <div class="dist">차로 약 29분<small>17.9km</small></div>
+            <p class="desc">임진강 위를 건너 민간인통제선 안쪽까지 다녀오는 곤돌라입니다.</p>
+            <p class="why">전날 소도에 묵으면 탑승장까지 29분이라, 줄이 길어지기 전 이른 시간에 탑승하기 좋습니다.</p>
+            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%ED%8C%8C%EC%A3%BC%EC%9E%84%EC%A7%84%EA%B0%81%ED%8F%89%ED%99%94%EA%B3%A4%EB%8F%8C%EB%9D%BC,37.89145681,126.74028509" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/detail_view.do?coid=32e53c71-aa79-4943-9ca6-b0a1d93acb45" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="spot">
+            <span class="no" aria-hidden="true">09</span>
+            <h3>파주 임진각 (평화누리공원)<span class="dir">소도호텔에서 북쪽</span></h3>
+            <div class="dist">차로 약 29분<small>18.0km</small></div>
+            <p class="desc">넓은 잔디 언덕과 바람개비, 자유의 다리가 있는 평화 관광의 출발점입니다.</p>
+            <p class="why">소도를 거점으로 두면 임진각과 곤돌라를 반나절에 돌아보고, 오후에는 헤이리까지 이어갈 수 있습니다.</p>
+            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EC%9E%84%EC%A7%84%EA%B0%81%20%ED%8F%89%ED%99%94%EB%88%84%EB%A6%AC%EA%B3%B5%EC%9B%90,37.89227563,126.74392019" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/detail_view.do?coid=197e6e5e-b111-4561-9edc-2579205d9151" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+          <li class="spot">
+            <span class="no" aria-hidden="true">10</span>
+            <h3>감악산 출렁다리<span class="dir">소도호텔에서 북동쪽</span></h3>
+            <div class="dist">차로 약 43분<small>38.6km</small></div>
+            <p class="desc">감악산 산허리에 걸린 출렁다리로, 계곡과 능선을 잇는 산행의 들머리입니다.</p>
+            <p class="why">열 곳 중 가장 먼 여정이니, 산행 뒤 먼 길을 바로 돌아가는 대신 소도의 편백 사우나 객실에서 하루 쉬어 가세요.</p>
+            <p class="go"><a href="https://map.kakao.com/link/from/%EC%86%8C%EB%8F%84%ED%98%B8%ED%85%94,37.76447633,126.77531384/to/%EA%B0%90%EC%95%85%EC%82%B0%EC%B6%9C%EB%A0%81%EB%8B%A4%EB%A6%AC,37.93642596,126.94444206" target="_blank" rel="noopener noreferrer">소도호텔에서 길찾기 ↗</a><a href="https://korean.visitkorea.or.kr/detail/detail_view.do?coid=de772d8a-a59a-4a1f-bb74-f914fb541bd2" target="_blank" rel="noopener noreferrer">여행지 정보 ↗</a></p>
+          </li>
+        </ol>
+      </div>
+      <dl class="facts">
+        <div><dt>가장 가까운 여행지</dt><dd>차로 14분</dd></div>
+        <div><dt>30분 이내 여행지</dt><dd>10곳 중 9곳</dd></div>
+        <div><dt>주차</dt><dd>투숙 중 무료</dd></div>
+        <div><dt>체크아웃</dt><dd>12:00</dd></div>
+      </dl>
+      <p class="travel-note">거리와 이동시간은 소도호텔 출발, 카카오맵 자동차 길찾기 기준(소통 원활 시)이며 교통 상황에 따라 달라질 수 있습니다. 여행지는 한국관광공사 「대한민국 구석구석」 파주 인기 여행지를 기준으로 골랐습니다.</p>
     </div>
   </section>
 
