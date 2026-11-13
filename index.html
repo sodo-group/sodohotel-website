@@ -397,6 +397,11 @@ section { padding-block: clamp(80px, 11vw, 150px); }
 .travel-note { margin: 28px 0 0; font-size: 13px; color: var(--muted); }
 .travel .facts { margin-top: clamp(40px, 6vw, 72px); }
 @media (max-width: 900px) { .travel-grid { grid-template-columns: 1fr; } .tmap { position: static; max-width: 440px; } .tmap svg { max-height: none; } .tf-l { width: 100%; } }
+@media (min-width: 901px) {
+  .tf { flex-wrap: nowrap; gap: 4px; }
+  .tf-l { width: 3.4em; }
+  .tf button { white-space: nowrap; font-size: clamp(11px, .95vw, 13px); padding: 7px clamp(5px, .65vw, 9px); }
+}
 
 /* location */
 .loc-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(32px, 6vw, 88px); align-items: start; }
