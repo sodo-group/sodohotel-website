@@ -1613,6 +1613,7 @@ a.call:hover { background: var(--ink); color: var(--paper); }
     c.setAttribute("class", "pt" + (d.top === "1" ? " top" : ""));
     var t = document.createElementNS(NS, "title"); t.textContent = li.querySelector("h3").textContent + " · " + li.querySelector(".tp-t").textContent; c.appendChild(t);
     c.addEventListener("click", function () { select(li, true); });
+    c.addEventListener("mouseenter", function () { select(li, false); });
     (d.top === "1" ? pts.appendChild(c) : pts.insertBefore(c, pts.firstChild)); li._pt = c;
     li.addEventListener("mouseenter", function () { select(li, false); });
     li.addEventListener("focusin", function () { select(li, false); });
